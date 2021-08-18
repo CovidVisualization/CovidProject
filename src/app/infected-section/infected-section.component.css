@@ -8,7 +8,7 @@
 
 .bg-section h1{
     color: white;
-    font-size: 70px;
+    font-size: 600%;
     text-align: left;
 }
 .bg-section h4{
@@ -18,7 +18,7 @@
 }
 .bg-section h3{
     color: white;
-    font-size: 50px;
+    font-size: 300%;
     text-align: center;
 }
 
@@ -51,11 +51,11 @@
 }
 
 .box{
-    position: relative;
+    position: static;
     border-radius: 20px;
     padding: 1rem;
     background: #ea5771;
-    height: auto;
+    height: 100%;
     padding: 1.5rem 1.8rem;
 }
 
