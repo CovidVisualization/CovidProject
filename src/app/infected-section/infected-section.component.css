@@ -59,3 +59,45 @@
     padding: 1.5rem 1.8rem;
 }
 
+@media (max-width: 450px) {
+    .header h1{
+        color: white;
+        font-size: 20px;
+        text-align: center;
+    }
+    
+    .header h2{
+        color: #f26c4f;
+        font-weight: bold;
+        font-size: 40px;
+        text-align: center;
+    }
+    .box{
+        position: static;
+        border-radius: 20px;
+        padding: 1rem;
+        background: #ea5771;
+        height: 100%;
+        padding: 1.5rem 1.8rem;
+    }
+    .box h1{
+        color: white;
+        font-size: 20px;
+        text-align: center;
+    }
+    .box h2{
+        color: white;
+        font-size: 20px;
+        text-align: center;
+    }
+    .box h3{
+        color: white;
+        font-size: 20px;
+        text-align: center;
+    }
+    .box h4{
+        color: white;
+        font-size: 20px;
+        text-align: center;
+    }
+}
