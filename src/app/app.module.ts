@@ -8,13 +8,15 @@ import { MaterialModule } from './material/material.module';
 import { InfectedSectionComponent } from './infected-section/infected-section.component';
 import { CheckCovidComponent } from './check-covid/check-covid.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ChartComponent } from './chart/chart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InfectedSectionComponent,
     CheckCovidComponent,
-    NavbarComponent
+    NavbarComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
