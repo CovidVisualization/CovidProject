@@ -1,0 +1,61 @@
+.bg-section {
+    width: auto;
+    height: 750px;
+    background-color: #313131;
+    padding: 2%;
+    font-family: prompt;
+}
+
+.bg-section h1{
+    color: white;
+    font-size: 70px;
+    text-align: left;
+}
+.bg-section h4{
+    color: white;
+    font-size: 28px;
+    text-align: center;
+}
+.bg-section h3{
+    color: white;
+    font-size: 50px;
+    text-align: center;
+}
+
+.header {
+    padding-bottom: 3%;
+}
+
+.header h1{
+    color: white;
+    font-size: 50px;
+    text-align: center;
+}
+
+.header h2{
+    color: #f26c4f;
+    font-weight: bold;
+    font-size: 80px;
+    text-align: center;
+}
+.container{
+    width: 90%;
+    display: grid;
+}
+
+.box-area {
+    margin: auto;
+    display: block;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.box{
+    position: relative;
+    border-radius: 20px;
+    padding: 1rem;
+    background: #ea5771;
+    height: auto;
+    padding: 1.5rem 1.8rem;
+}
+
