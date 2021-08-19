@@ -1,25 +1,23 @@
 .navbar .navbar-nav .nav-link:hover {
-    color: white;
-  }
-
-.navbar {
-  font-family: prompt;
+  color: white;
 }
-  @media only screen and (max-width: 990px) {
-    .navbar .navbar-nav .nav-link {
-      padding: 1em 1.5em;
-      color: whitesmoke;
-    }
-    .navbar {
-      padding: 0;
-      font-family: prompt;
-    }
-    .navbar .navbar-brand {
-      padding: 0 0.7em;
-    }
-  }
+.navbar a{
+  color: white;
+}
+
+@media only screen and (min-width: 990px) {
   .navbar .navbar-nav .nav-link {
-    position: relative;
+    padding: 1em 2em;
+
+  }
+  #gg {
+    padding-right: 13em;
+  }
+  .navbar {
+    padding: 0;
+  }
+  .navbar .navbar-brand {
+    padding: 0 0.7em;
   }
   .navbar .navbar-nav .nav-link::after {
     position: absolute;
@@ -30,15 +28,15 @@
     background-color: red;
     color: transparent;
     width: 0%;
-    content: '';
+    content: "";
     height: 3px;
     transition: all 0.5s;
   }
-  .navbar .navbar-nav .nav-link:hover::after {
-    width: 100%;
-  }
-  .navbar .navbar-nav {
-      margin: auto;
-      color: white;
+}
+.navbar .navbar-nav .nav-link {
+  position: relative;
+}
 
-  }
+.navbar .navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
