@@ -12,6 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ChartModule } from 'angular2-chartjs';
 import { ChartComponent } from './chart/chart.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,6 @@ import { ChartComponent } from './chart/chart.component';
     CheckCovidComponent,
     NavbarComponent,
     ChartComponent,
-
   ],
   imports: [
     BrowserModule,
