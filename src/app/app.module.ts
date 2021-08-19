@@ -8,6 +8,8 @@ import { MaterialModule } from './material/material.module';
 import { InfectedSectionComponent } from './infected-section/infected-section.component';
 import { CheckCovidComponent } from './check-covid/check-covid.component';
 import { NavbarComponent } from './navbar/navbar.component';
+
+import { ChartModule } from 'angular2-chartjs';
 import { ChartComponent } from './chart/chart.component';
 
 @NgModule({
@@ -16,12 +18,14 @@ import { ChartComponent } from './chart/chart.component';
     InfectedSectionComponent,
     CheckCovidComponent,
     NavbarComponent,
-    ChartComponent
+    ChartComponent,
+
   ],
   imports: [
     BrowserModule,
     RoutingModule,
-    MaterialModule
+    MaterialModule,
+    ChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]
