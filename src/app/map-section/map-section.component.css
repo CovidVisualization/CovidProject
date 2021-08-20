@@ -17,3 +17,8 @@ h1 {
     margin: auto;
     font-size: 10em;
 }
+
+#map {
+    height: 100%;
+  }
+  
