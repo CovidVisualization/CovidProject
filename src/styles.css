@@ -1,4 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: Prompt;
+    src: url(assets/fonts/Prompt-Regular.ttf) format('truetype');
+}
+
+.Prompt {
+    font-family: Prompt;
+}
+
 html, body {
     font-family: 'prompt';
 }

@@ -12,6 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ChartModule } from 'angular2-chartjs';
 import { ChartComponent } from './chart/chart.component';
 import { MapSectionComponent } from './map-section/map-section.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { MapSectionComponent } from './map-section/map-section.component';
   imports: [
     BrowserModule,
     RoutingModule,
-    ChartModule
+    ChartModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
