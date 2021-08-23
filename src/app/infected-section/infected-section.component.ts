@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class InfectedSectionComponent implements OnInit {
 
   amountInfected = 1;
+  amountInfectedToday= 555;
   amountHealing = 20;
   amountHealed = 3;
   amountDeath = 4;

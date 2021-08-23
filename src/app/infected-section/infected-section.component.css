@@ -65,6 +65,20 @@ a.anchor {
     padding: 1.5rem 1.8rem;
 }
 
+.box h5 {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 11vh;
+    padding-left: 10vh;
+}
+.box h6 {
+    color: white;
+    font-size: 40px;
+    padding-left: 10vh;
+    text-align: center;
+}
+
 @media (max-width: 450px) {
     .header h1{
         color: white;
