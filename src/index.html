@@ -17,19 +17,19 @@
 
     <script>
       function init() {
-        var map1 = new longdo.Map({
-          placeholder: document.getElementById('map1')
+        var divmap = new longdo.Map({
+          placeholder: document.getElementById('divmap')
         });
-        map1.Layers.setBase(longdo.Layers.POLITICAL);
-        map1.location({ lon:100.4930262, lat:13.7248936 }, true);
-        map1.Ui.DPad.visible(false);
-        map1.Ui.Zoombar.visible(false);
-        map1.Ui.Geolocation.visible(false);
-        map1.Ui.Toolbar.visible(false);
-        map1.Ui.LayerSelector.visible(false);
-        map1.Ui.Fullscreen.visible(false);
-        map1.Ui.Scale.visible(false);
-        map1.zoomRange({min:6, max:12});
+        divmap.Layers.setBase(longdo.Layers.POLITICAL);
+        divmap.location({ lon:100.4930262, lat:13.7248936 }, true);
+        divmap.Ui.DPad.visible(false);
+        divmap.Ui.Zoombar.visible(false);
+        divmap.Ui.Geolocation.visible(false);
+        divmap.Ui.Toolbar.visible(false);
+        divmap.Ui.LayerSelector.visible(false);
+        divmap.Ui.Fullscreen.visible(false);
+        divmap.Ui.Scale.visible(false);
+        divmap.zoomRange({min:6, max:12});
           
         }
     </script>
