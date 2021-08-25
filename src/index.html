@@ -14,8 +14,28 @@
       crossorigin="anonymous"
     />
     <script type="text/javascript" src="https://api.longdo.com/map/?key=fa858017063847c04fbec6271af85509"></script>
+
+    <script>
+      function init() {
+        var map1 = new longdo.Map({
+          placeholder: document.getElementById('map1')
+        });
+        map1.Layers.setBase(longdo.Layers.POLITICAL);
+        map1.location({ lon:100.4930262, lat:13.7248936 }, true);
+        map1.Ui.DPad.visible(false);
+        map1.Ui.Zoombar.visible(false);
+        map1.Ui.Geolocation.visible(false);
+        map1.Ui.Toolbar.visible(false);
+        map1.Ui.LayerSelector.visible(false);
+        map1.Ui.Fullscreen.visible(false);
+        map1.Ui.Scale.visible(false);
+        map1.zoomRange({min:6, max:12});
+          
+        }
+    </script>
+    
   </head>
-  <body>
+  <body onload="init();">
     <app-root></app-root>
   </body>
 </html>

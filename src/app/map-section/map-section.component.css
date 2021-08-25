@@ -2,7 +2,6 @@
     width: auto;
     height: 900px;
     background-color: wheat;
-    padding: 2%;
 }
 
 a.anchor {
@@ -12,13 +11,6 @@ a.anchor {
     visibility: hidden;
 }
 
-h1 {
-    text-align: center;
-    margin: auto;
-    font-size: 10em;
-}
-
-#map {
+#map1 {
     height: 100%;
-  }
-  
+}

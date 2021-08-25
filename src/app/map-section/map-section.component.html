@@ -1,23 +1,4 @@
 <a class="anchor" id="map"></a>
-<section class="map-section" onload="init();">
-    <h1>Map Section</h1>
-    <div id="map"></div>
-</section>
-<script>
-    function init() {
-      var map = new longdo.Map({
-        placeholder: document.getElementById('map')
-      });
-      map.Layers.setBase(longdo.Layers.POLITICAL);
-      map.location({ lon:100.4930262, lat:13.7248936 }, true);
-      map.Ui.DPad.visible(false);
-      map.Ui.Zoombar.visible(false);
-      map.Ui.Geolocation.visible(false);
-      map.Ui.Toolbar.visible(false);
-      map.Ui.LayerSelector.visible(false);
-      map.Ui.Fullscreen.visible(false);
-      map.Ui.Scale.visible(false);
-      map.zoomRange({min:6, max:12});
-      
-    }
-</script>
+<div class="map-section">
+  <div id="map1"></div>
+</div>
