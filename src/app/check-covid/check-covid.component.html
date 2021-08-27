@@ -1,8 +1,11 @@
-<div id="check-covid" class="section-1">
-  <div class="header">
-    <h2>ตรวจเชื้อ COVID-19</h2>
+<a class="anchor" id="check-covid"></a>
 
-    <mat-form-field>
+<div class="section-1">
+  <div class="header">
+    
+    <h2>ตรวจเชื้อ COVID-19 ที่ไหนได้บ้าง?</h2>
+
+    <mat-form-field appearance="outline" color="accent">
       <mat-label>ค้นหา</mat-label>
       <input
         matInput
@@ -11,9 +14,9 @@
         #input
       />
     </mat-form-field>
-  </div>
+  
 
-  <div class="filter-field">
+  <!-- <div class="filter-field"> -->
     <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8">
       <!-- Position Column -->
       <ng-container matColumnDef="position">
@@ -71,7 +74,7 @@
       <!-- Row shown when there is no matching data. -->
       <tr class="mat-row" *matNoDataRow>
         <td class="mat-cell" colspan="4">
-          No data matching the filter "{{ input.value }}"
+          ไม่พบข้อมูลที่ต้องการค้นหา "{{ input.value }}"
         </td>
       </tr>
     </table>
@@ -79,5 +82,5 @@
       [pageSizeOptions]="[5, 10]"
       aria-label="Select page of users"
     ></mat-paginator>
-  </div>
+</div>
 </div>

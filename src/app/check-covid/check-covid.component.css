@@ -1,3 +1,10 @@
+a.anchor {
+  display: block;
+  position: relative;
+  top: -150px;
+  visibility: hidden;
+}
+
 .section-1 {
   width: auto;
   height: 1000px;
@@ -6,7 +13,7 @@
 
 .header {
   margin: 7vh;
-  padding-top: 5vh;
+  padding-top: 8vh;
 }
 
 .header h2 {
@@ -14,9 +21,16 @@
   font-size: 6vh;
 }
 
+.header h3 {
+  color: white;
+  font-size: 2vh;
+  margin-right: 10vh;
+}
+
 table {
   width: 100%;
   font-family: Prompt;
+  
 }
 
 td,
@@ -31,13 +45,17 @@ th {
 
 .filter-field {
   margin: 7vh;
+  padding-bottom: 30vh;
 }
 
 .mat-form-field {
   font-size: 14px;
-  width: 100%;
+  width: 30%;
   font-family: Prompt;
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
   background-color: white;
+  border-radius: 5px;
 }
 
 .mat-form-field .mat-input-element {
