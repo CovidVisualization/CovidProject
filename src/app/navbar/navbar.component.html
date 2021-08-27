@@ -1,35 +1,37 @@
-<!-- Navbar Content -->
-<nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-black mynav">
-  <div class="container-fluid">
-    <a class="navbar-brand " href="#">CovidVisualization</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul id="gg"class="nav navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#Infected">ยอดผู้ติดเชื้อ</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#map">จุดเสี่ยงในประเทศไทย</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#chart">กราฟ</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#check-covid">ตรวจโควิด</a>
-        </li>
-      </ul>
-    </div>
+<nav class="navbar navbar-expand-xl sticky-top navbar-dark bg-black">
+  <a class="navbar-brand" href="#">CovidVisualization</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+    (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div
+    class="collapse navbar-collapse"
+    id="navbarSupportedContent"
+    [ngbCollapse]="isCollapsed"
+  >
+    <ul id="gg" class="nav navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#Infected">ยอดผู้ติดเชื้อ</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#map">จุดเสี่ยงในประเทศไทย</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#chart">กราฟ</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#check-covid">ตรวจโควิด</a>
+      </li>
+    </ul>
   </div>
 </nav>
-
 

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -13,9 +14,15 @@ export class InfectedSectionComponent implements OnInit {
   amountHealed = 3;
   amountDeath = 4;
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.http.get('http://localhost:4200/proxy/covid/api/covid/totalcovid%27').subscribe(data => {
+      console.log(data)
+
+      // var dataTmp = { ...data }
+      // this.amountInfected = dataTmp['newCase']
+    })
   }
 
 }

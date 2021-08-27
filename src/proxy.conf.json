@@ -1,0 +1,11 @@
+{
+    "/proxy": {
+        "target": "http://25.58.26.212/", 
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug",
+        "pathRewrite": {
+            "^/proxy": ""
+        }
+    }
+}

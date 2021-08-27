@@ -4,16 +4,16 @@ import { Routes, RouterModule, Router } from '@angular/router';
 import { InfectedSectionComponent } from '../infected-section/infected-section.component';
 import { CheckCovidComponent } from '../check-covid/check-covid.component';
 
-const routes: Routes = [
-  {path: '', redirectTo: '/infect', pathMatch: 'full'}
-];
+// const routes: Routes = [
+//   {path: '', redirectTo: '/infect', pathMatch: 'full'}
+// ];
 
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes)
+    // RouterModule.forRoot(routes)
   ],
   exports: [
     RouterModule
