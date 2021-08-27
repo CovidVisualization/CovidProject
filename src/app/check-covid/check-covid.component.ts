@@ -73,7 +73,7 @@ const ELEMENT_DATA: UserData[] = [
     type: 'CPR',
     typeEnter: 'Drive-Thu',
     price: '1500',
-    location: 'google map',
+    location: 'goole map',
   },
 ];
 
