@@ -1,32 +1,45 @@
 .section-1 {
-    width: auto;
-    height: 1000px;
-    background-color: #313131;
-
-    
+  width: auto;
+  height: 1000px;
+  background-color: #313131;
 }
+
+.header {
+  margin: 7vh;
+  padding-top: 5vh;
+}
+
+.header h2 {
+  color: white;
+  font-size: 6vh;
+}
+
 table {
-    width: 100%;
-    font-family: Prompt;
-  }
-  
-  .mat-form-field {
-    font-size: 14px;
-    width: 100%;
-    font-family: Prompt;
-  }
-  
-  td, th {
-    width: 25%;
-  }
+  width: 100%;
+  font-family: Prompt;
+}
+
+td,
+th {
+  width: 10%;
+}
+
+th {
+  font-size: 2vh;
+  font-weight: bold;
+}
 
 .filter-field {
-    margin: 10vh;
+  margin: 7vh;
 }
 
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+  font-family: Prompt;
+  background-color: white;
+}
 
-.mat-form-field  .mat-input-element {
-
-    color: white;
-
+.mat-form-field .mat-input-element {
+  color: black;
 }
