@@ -17,7 +17,7 @@ export class InfectedSectionComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get('http://localhost:4200/proxy/covid/api/covid/totalcovid%27').subscribe(data => {
+    this.http.get('http://25.58.26.212/covid/api/covid/totalcovid').subscribe(data => {
       console.log(data)
 
       // var dataTmp = { ...data }
