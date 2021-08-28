@@ -18,9 +18,7 @@ export class InfectedSectionComponent implements OnInit {
 
   ngOnInit(): void {
     this.http.get<any>('http://25.58.26.212/covid/api/covid/totalcovid').subscribe(data => {
-
-      console.log(data)
-
+      
       this.amountInfected = data[0].totalnew
       this.amountInfectedToday = data[0].newCase
       this.amountHealing = data[0].healing
