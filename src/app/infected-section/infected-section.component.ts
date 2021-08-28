@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfectedSectionComponent implements OnInit {
 
-  amountInfected = 1;
-  amountInfectedToday= 555;
+  amountInfected = 0;
+  amountInfectedToday = 0;
   amountHealing = 20;
   amountHealed = 3;
   amountDeath = 4;
@@ -17,11 +17,15 @@ export class InfectedSectionComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get('http://25.58.26.212/covid/api/covid/totalcovid').subscribe(data => {
+    this.http.get<any>('http://25.58.26.212/covid/api/covid/totalcovid').subscribe(data => {
       console.log(data)
 
-      // var dataTmp = { ...data }
-      // this.amountInfected = dataTmp['newCase']
+      this.amountInfected = data[0].totalnew
+      this.amountInfectedToday = data[0].newCase
+      this.amountHealing = data[0].healing
+      this.amountHealed = data[0].healed
+      this.amountDeath = data[0].dead
+
     })
   }
 
