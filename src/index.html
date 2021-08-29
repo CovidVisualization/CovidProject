@@ -1,59 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>CovidProject</title>
-    <base href="/" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <!-- CSS only -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
-      crossorigin="anonymous"
-    />
-    <!-- JavaScript Bundle with Popper -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-      crossorigin="anonymous"
-    ></script>
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 
-    <script
-      type="text/javascript"
-      src="https://api.longdo.com/map/?key=fa858017063847c04fbec6271af85509"
-    ></script>
+<head>
+  <meta charset="utf-8" />
+  <title>CovidProject</title>
+  <base href="/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"></script>
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 
-    <script>
-      var province = 'Marker';
+  <script type="text/javascript" src="https://api.longdo.com/map/?key=fa858017063847c04fbec6271af85509"></script>
+
+  <script>
+    fetch('http://25.58.26.212/coviD/api/covid/location')
+      .then(response => response.json())
+      .then(data => init(data))
+
+    function init(data) {
+      var divmap = new longdo.Map({
+        placeholder: document.getElementById("divmap"),
+      });
+      divmap.Layers.setBase(longdo.Layers.POLITICAL);
+      divmap.location({ lon: 100.4930262, lat: 13.7248936 }, true);
+      divmap.Ui.DPad.visible(false);
+      divmap.Ui.Zoombar.visible(false);
+      divmap.Ui.Geolocation.visible(false);
+      divmap.Ui.Toolbar.visible(false);
+      divmap.Ui.LayerSelector.visible(false);
+      divmap.Ui.Fullscreen.visible(false);
+      divmap.Ui.Scale.visible(false);
+      divmap.zoomRange({ min: 6, max: 9 });
+
       var detail = 'Drag me';
-      var limit = 77;
-      var i = 0;
 
-      function init() {
-        var divmap = new longdo.Map({
-          placeholder: document.getElementById("divmap"),
-        });
-        divmap.Layers.setBase(longdo.Layers.POLITICAL);
-        divmap.location({ lon: 100.4930262, lat: 13.7248936 }, true);
-        divmap.Ui.DPad.visible(false);
-        divmap.Ui.Zoombar.visible(false);
-        divmap.Ui.Geolocation.visible(false);
-        divmap.Ui.Toolbar.visible(false);
-        divmap.Ui.LayerSelector.visible(false);
-        divmap.Ui.Fullscreen.visible(false);
-        divmap.Ui.Scale.visible(false);
-        divmap.zoomRange({ min: 6, max: 9 });
-
-        while(i < limit){
-          var lon = 100.491781+(Math.random()-0.5)*10;
-          var lat = 13.689128+(Math.random()-0.5)*10;
-          var marker = new longdo.Marker({ lon: lon, lat: lat },
-            {
-              title: province,
-              icon: {
+      for (var i = 0; i < data.length; i++) {
+        var marker = new longdo.Marker({ lon: data[i].longitude, lat: data[i].latitude },
+          {
+            title: data[i].name,
+            icon: {
               url: 'https://map.longdo.com/mmmap/images/pin_mark.png',
               offset: { x: 12, y: 45 }
             },
@@ -62,26 +53,18 @@
             draggable: false,
             weight: longdo.OverlayWeight.Top,
           });
-          divmap.Overlays.add(marker);
-          i++;
-        }
+        divmap.Overlays.add(marker);
       }
+    }
+  </script>
 
-      
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+</head>
 
-    </script>
+<body>
+  <app-root></app-root>
+</body>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-  </head>
-  <body onload="init();">
-    <app-root></app-root>
-  </body>
 </html>
