@@ -5,7 +5,6 @@ import { MatTableDataSource } from '@angular/material/table';
 
 export interface UserData {
   name: string;
-  position: number;
   district: string;
   province: string;
   type: string;
@@ -16,63 +15,57 @@ export interface UserData {
 
 const ELEMENT_DATA: UserData[] = [
   {
-    position: 1,
-    name: 'โรงพยาบาลยอนฮี',
+    name: 'โรงพยาบาลวชิระ',
     district: 'กรุงเทพมหานคร',
     province: 'ดอนเมือง',
-    type: 'CPR',
+    type: 'RT-PCR',
     typeEnter: 'Drive-Thu',
-    price: '3000',
-    location: 'google map',
+    price: '3000 บาท',
+    location: 'https://goo.gl/maps/U2WJZNpJCe5goiAx8',
   },
   {
-    position: 2,
     name: 'โรงพยาบาล Mansea',
     district: 'กรุงเทพมหานคร',
     province: 'ลาดพร้าว',
-    type: 'CPR',
+    type: 'RT-PCR',
     typeEnter: 'Drive-Thu',
-    price: '1500',
+    price: '1500 บาท',
     location: 'google map',
   },
   {
-    position: 3,
     name: 'โรงพยาบาล Mansea',
     district: 'กรุงเทพมหานคร',
     province: 'ลาดพร้าว',
-    type: 'CPR',
+    type: 'RT-PCR',
     typeEnter: 'Drive-Thu',
-    price: '1500',
+    price: '1500 บาท',
     location: 'google map',
   },
   {
-    position: 4,
     name: 'โรงพยาบาล Mansea',
     district: 'กรุงเทพมหานคร',
     province: 'ลาดพร้าว',
-    type: 'CPR',
+    type: 'RT-PCR',
     typeEnter: 'Drive-Thu',
-    price: '1500',
+    price: '1500 บาท',
     location: 'google map',
   },
   {
-    position: 5,
     name: 'โรงพยาบาล Mansea',
     district: 'กรุงเทพมหานคร',
     province: 'ลาดพร้าว',
-    type: 'CPR',
+    type: 'RT-PCR',
     typeEnter: 'Drive-Thu',
-    price: '1500',
+    price: '1500 บาท',
     location: 'google map',
   },
   {
-    position: 6,
     name: 'โรงพยาบาล Mansea',
     district: 'กรุงเทพมหานคร',
     province: 'ลาดพร้าว',
-    type: 'CPR',
+    type: 'RT-PCR',
     typeEnter: 'Drive-Thu',
-    price: '1500',
+    price: '1500 บาท',
     location: 'goole map',
   },
 ];
@@ -83,18 +76,16 @@ const ELEMENT_DATA: UserData[] = [
 @Component({
   selector: 'app-check-covid',
   templateUrl: './check-covid.component.html',
-  styleUrls: ['./check-covid.component.css'],
+  styleUrls: ['./check-covid.component.scss'],
 })
 export class CheckCovidComponent implements AfterViewInit {
   displayedColumns: string[] = [
-    'position',
     'name',
     'district',
     'province',
     'type',
     'typeEnter',
     'price',
-    'location',
   ];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
