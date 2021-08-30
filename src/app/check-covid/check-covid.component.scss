@@ -19,7 +19,7 @@ a.anchor {
 
 .header h2 {
   color: white;
-  font-size: 6vh;
+  font-size: 3rem;
 }
 
 .header h3 {
@@ -82,6 +82,10 @@ th {
 
       }
 @media screen and (max-width: 768px) {
+  .header h2 {
+    color: white;
+    font-size: 40px;
+  }
   .mat-elevation-z8 {
     background: transparent;
     box-shadow: none;
@@ -148,7 +152,7 @@ th {
         color: rgba(0, 0, 0, 0.54);
       }
       &.m-card-title {
-          font-size: 2rem;
+          font-size: 2vw;
       }
       
     }

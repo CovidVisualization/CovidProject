@@ -1,51 +1,51 @@
 [
   {
-    "name": "โรงพยาบาลวชิระ",
+    "name": "รพ. วชิระ",
     "district": "กรุงเทพมหานคร",
-    "province": "ดอนเมือง",
+    "province": "ดุสิต",
     "type": "RT-PCR",
     "typeEnter": "Drive-Thu",
-    "price": "3000 บาท",
+    "price": "2,440 บาท - 2,590 บาท",
     "location": "https://goo.gl/maps/U2WJZNpJCe5goiAx8"
   },
   {
-    "name": "โรงพยาบาล GG",
+    "name": "Chrio Clinic",
     "district": "กรุงเทพมหานคร",
-    "province": "ลาดพร้าว",
+    "province": "ประเวศ",
     "type": "RT-PCR",
     "typeEnter": "Drive-Thu",
-    "price": "1500 บาท",
-    "location": "google map"
+    "price": "1,090 บาท",
+    "location": "https://g.page/chrioclinic?share"
   },
   {
-    "name": "โรงพยาบาล Mansea",
+    "name": "Life Center Clinic",
     "district": "กรุงเทพมหานคร",
-    "province": "ลาดพร้าว",
+    "province": "ทองหล่อ",
     "type": "RT-PCR",
     "typeEnter": "Drive-Thu",
-    "price": "1500 บาท",
-    "location": "google map"
+    "price": "1,000 บาท",
+    "location": "https://goo.gl/maps/hbPAaoVS6w7xyn9i8"
   },
   {
-    "name": "โรงพยาบาล Mansea",
-    "district": "กรุงเทพมหานคร",
-    "province": "ลาดพร้าว",
-    "type": "RT-PCR",
-    "typeEnter": "Drive-Thu",
-    "price": "1500 บาท",
-    "location": "google map"
+    "name": "รพ.เวิลด์เมดิคอล",
+    "district": "นนทบุรี",
+    "province": "ปากเกร็ด",
+    "type": "PCR",
+    "typeEnter": "ตรวจที่รพ.",
+    "price": "6,500 บาท",
+    "location": "https://goo.gl/maps/kJ3Kr8i7NiyfNvUs9"
   },
   {
-    "name": "โรงพยาบาล Mansea",
-    "district": "กรุงเทพมหานคร",
-    "province": "ลาดพร้าว",
-    "type": "RT-PCR",
-    "typeEnter": "Drive-Thu",
-    "price": "1500 บาท",
-    "location": "google map"
+    "name": "คลินิกแพทย์สาโรจน์",
+    "district": "ชลบุรี",
+    "province": "เมือง",
+    "type": "Antigen Test Kit",
+    "typeEnter": "ตรวจที่คลินิก",
+    "price": "650 บาท",
+    "location": "https://goo.gl/maps/Wk7457C7EV2anbyv8"
   },
   {
-    "name": "โรงพยาบาล Mansea",
+    "name": "รพ. Mansea",
     "district": "กรุงเทพมหานคร",
     "province": "ลาดพร้าว",
     "type": "RT-PCR",
