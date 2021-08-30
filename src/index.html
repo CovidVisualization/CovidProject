@@ -19,11 +19,31 @@
   <script type="text/javascript" src="https://api.longdo.com/map/?key=fa858017063847c04fbec6271af85509"></script>
 
   <script>
-    fetch('http://25.58.26.212/coviD/api/covid/location')
-      .then(response => response.json())
-      .then(data => init(data))
+    var post;
 
-    function init(data) {
+    fetch('http://25.58.26.212/coviD/api/covid/location')
+      .then(function (response) {
+        if (response.ok) {
+          return response.json();
+        } else {
+          return Promise.reject(response);
+        }
+      }).then(function (data) {
+        post = data;
+        return fetch('http://25.58.26.212/covid/api/covid/province');
+      }).then(function (response) {
+          if (response.ok) {
+            return response.json();
+          } else {
+            return Promise.reject(response);
+          }
+        }).then(function (post2) {
+          init(post, post2);
+        }).catch(function (error) {
+          console.warn(error);
+        });
+
+    function init(post, post2) {
       var divmap = new longdo.Map({
         placeholder: document.getElementById("divmap"),
       });
@@ -40,15 +60,15 @@
 
       var detail = 'Drag me';
 
-      for (var i = 0; i < data.length; i++) {
-        var marker = new longdo.Marker({ lon: data[i].longitude, lat: data[i].latitude },
+      for (var i = 0; i < post.length; i++) {
+        var marker = new longdo.Marker({ lon: post[i].longitude, lat: post[i].latitude },
           {
-            title: data[i].name,
+            title: post[i].name,
             icon: {
               url: 'https://map.longdo.com/mmmap/images/pin_mark.png',
               offset: { x: 12, y: 45 }
             },
-            detail: detail,
+            detail: post2[i].newCase,
             visibleRange: { min: 8, max: 9 },
             draggable: false,
             weight: longdo.OverlayWeight.Top,

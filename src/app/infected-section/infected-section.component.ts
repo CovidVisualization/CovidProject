@@ -10,9 +10,9 @@ export class InfectedSectionComponent implements OnInit {
 
   amountInfected = 0;
   amountInfectedToday = 0;
-  amountHealing = 20;
-  amountHealed = 3;
-  amountDeath = 4;
+  amountHealing = 0;
+  amountHealed = 0;
+  amountDeath = 0;
 
   constructor(private http: HttpClient) { }
 
