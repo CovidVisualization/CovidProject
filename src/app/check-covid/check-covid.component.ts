@@ -2,8 +2,9 @@ import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import hospitalJSON from './hospital-data.json';
 
-export interface UserData {
+export interface HospitalData {
   name: string;
   district: string;
   province: string;
@@ -12,63 +13,6 @@ export interface UserData {
   price: string;
   location: string;
 }
-
-const ELEMENT_DATA: UserData[] = [
-  {
-    name: 'โรงพยาบาลวชิระ',
-    district: 'กรุงเทพมหานคร',
-    province: 'ดอนเมือง',
-    type: 'RT-PCR',
-    typeEnter: 'Drive-Thu',
-    price: '3000 บาท',
-    location: 'https://goo.gl/maps/U2WJZNpJCe5goiAx8',
-  },
-  {
-    name: 'โรงพยาบาล Mansea',
-    district: 'กรุงเทพมหานคร',
-    province: 'ลาดพร้าว',
-    type: 'RT-PCR',
-    typeEnter: 'Drive-Thu',
-    price: '1500 บาท',
-    location: 'google map',
-  },
-  {
-    name: 'โรงพยาบาล Mansea',
-    district: 'กรุงเทพมหานคร',
-    province: 'ลาดพร้าว',
-    type: 'RT-PCR',
-    typeEnter: 'Drive-Thu',
-    price: '1500 บาท',
-    location: 'google map',
-  },
-  {
-    name: 'โรงพยาบาล Mansea',
-    district: 'กรุงเทพมหานคร',
-    province: 'ลาดพร้าว',
-    type: 'RT-PCR',
-    typeEnter: 'Drive-Thu',
-    price: '1500 บาท',
-    location: 'google map',
-  },
-  {
-    name: 'โรงพยาบาล Mansea',
-    district: 'กรุงเทพมหานคร',
-    province: 'ลาดพร้าว',
-    type: 'RT-PCR',
-    typeEnter: 'Drive-Thu',
-    price: '1500 บาท',
-    location: 'google map',
-  },
-  {
-    name: 'โรงพยาบาล Mansea',
-    district: 'กรุงเทพมหานคร',
-    province: 'ลาดพร้าว',
-    type: 'RT-PCR',
-    typeEnter: 'Drive-Thu',
-    price: '1500 บาท',
-    location: 'goole map',
-  },
-];
 
 /**
  * @title Table with filtering
@@ -79,6 +23,9 @@ const ELEMENT_DATA: UserData[] = [
   styleUrls: ['./check-covid.component.scss'],
 })
 export class CheckCovidComponent implements AfterViewInit {
+
+  hospitalJSONs: HospitalData[] = hospitalJSON;
+
   displayedColumns: string[] = [
     'name',
     'district',
@@ -87,7 +34,7 @@ export class CheckCovidComponent implements AfterViewInit {
     'typeEnter',
     'price',
   ];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  dataSource = new MatTableDataSource(this.hospitalJSONs);
 
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;

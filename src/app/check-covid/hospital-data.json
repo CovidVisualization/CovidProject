@@ -7,5 +7,50 @@
     "typeEnter": "Drive-Thu",
     "price": "3000 บาท",
     "location": "https://goo.gl/maps/U2WJZNpJCe5goiAx8"
+  },
+  {
+    "name": "โรงพยาบาล GG",
+    "district": "กรุงเทพมหานคร",
+    "province": "ลาดพร้าว",
+    "type": "RT-PCR",
+    "typeEnter": "Drive-Thu",
+    "price": "1500 บาท",
+    "location": "google map"
+  },
+  {
+    "name": "โรงพยาบาล Mansea",
+    "district": "กรุงเทพมหานคร",
+    "province": "ลาดพร้าว",
+    "type": "RT-PCR",
+    "typeEnter": "Drive-Thu",
+    "price": "1500 บาท",
+    "location": "google map"
+  },
+  {
+    "name": "โรงพยาบาล Mansea",
+    "district": "กรุงเทพมหานคร",
+    "province": "ลาดพร้าว",
+    "type": "RT-PCR",
+    "typeEnter": "Drive-Thu",
+    "price": "1500 บาท",
+    "location": "google map"
+  },
+  {
+    "name": "โรงพยาบาล Mansea",
+    "district": "กรุงเทพมหานคร",
+    "province": "ลาดพร้าว",
+    "type": "RT-PCR",
+    "typeEnter": "Drive-Thu",
+    "price": "1500 บาท",
+    "location": "google map"
+  },
+  {
+    "name": "โรงพยาบาล Mansea",
+    "district": "กรุงเทพมหานคร",
+    "province": "ลาดพร้าว",
+    "type": "RT-PCR",
+    "typeEnter": "Drive-Thu",
+    "price": "1500 บาท",
+    "location": "goole map"
   }
 ]
