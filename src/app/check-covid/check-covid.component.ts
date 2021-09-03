@@ -24,7 +24,7 @@ export interface HospitalData {
 })
 export class CheckCovidComponent implements AfterViewInit {
 
-  hospitalJSONs: HospitalData[] = hospitalJSON;
+  HOSPITAL_DATA: HospitalData[] = hospitalJSON;
 
   displayedColumns: string[] = [
     'name',
@@ -34,7 +34,7 @@ export class CheckCovidComponent implements AfterViewInit {
     'typeEnter',
     'price',
   ];
-  dataSource = new MatTableDataSource(this.hospitalJSONs);
+  dataSource = new MatTableDataSource(this.HOSPITAL_DATA);
 
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;

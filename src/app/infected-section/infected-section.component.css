@@ -1,6 +1,6 @@
 .bg-section {
     width: auto;
-    height: 800px;
+    height: auto;
     background-color: #313131;
     padding-bottom: 50px;
     padding: 2%;
@@ -67,18 +67,25 @@ a.anchor {
     padding: 1.5rem 1.8rem;
 }
 
+.box-main{
+    position: static;
+    border-radius: 20px;
+    padding: 1rem;
+    background: #ea5771;
+    height: 15rem;
+    width: 40rem;
+    padding: 1.5rem 1.8rem;
+}
+
 .box h5 {
     color: white;
     font-size: 20px;
-    text-align: center;
-    padding-top: 11vh;
-    padding-left: 10vh;
+    text-align: right;
 }
 .box h6 {
     color: white;
     font-size: 40px;
-    padding-left: 10vh;
-    text-align: center;
+    text-align: right;
 }
 
 @media (max-width: 450px) {
@@ -95,7 +102,7 @@ a.anchor {
         text-align: center;
     }
     .box{
-        position: static;
+        position: relative;
         border-radius: 20px;
         padding: 0.5rem;
         background: #ea5771;
@@ -122,4 +129,18 @@ a.anchor {
         font-size: 20px;
         text-align: center;
     }
+}
+
+@media (max-width: 766px) {
+    .box h5 {
+        color: white;
+        font-size: 20px;
+        text-align: center;
+    }
+    .box h6 {
+        color: white;
+        font-size: 40px;
+        text-align: center;
+    }
+
 }
