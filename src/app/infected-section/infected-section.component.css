@@ -88,6 +88,61 @@ a.anchor {
     text-align: right;
 }
 
+@media (max-width: 780px) {
+    .header h1{
+        color: white;
+        font-size: 24px;
+        text-align: center;
+    }
+    
+    .header h2{
+        color: #f26c4f;
+        font-weight: bold;
+        font-size: 35px;
+        text-align: center;
+    }
+    .box{
+        position: relative;
+        border-radius: 20px;
+        padding: 0.5rem;
+        background: #ea5771;
+        height: 100%;
+        /* padding: 1rem 1.3rem; */
+    }
+    .box h1{
+        color: white;
+        font-size: 20px;
+        text-align: center;
+    }
+    .box h2{
+        color: white;
+        font-size: 20px;
+        text-align: center;
+    }
+    .box h3{
+        color: white;
+        font-size: 20px;
+        text-align: center;
+    }
+    .box h4{
+        color: white;
+        font-size: 20px;
+        text-align: center;
+    }
+    .box h5 {
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        padding-top:20px;
+    }
+    .box h6 {
+        color: white;
+        font-size: 20px;
+        text-align: center;
+    }
+
+}
+
 @media (max-width: 450px) {
     .header h1{
         color: white;
@@ -129,18 +184,16 @@ a.anchor {
         font-size: 20px;
         text-align: center;
     }
-}
-
-@media (max-width: 766px) {
     .box h5 {
         color: white;
         font-size: 20px;
         text-align: center;
+        padding-top:20px;
     }
     .box h6 {
         color: white;
-        font-size: 40px;
+        font-size: 20px;
         text-align: center;
     }
-
+    
 }

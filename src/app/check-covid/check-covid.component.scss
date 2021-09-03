@@ -80,7 +80,8 @@ th {
 .price-label {
   color: #f26c4f;
 
-      }
+}
+
 @media screen and (max-width: 768px) {
   .header h2 {
     color: white;
@@ -93,7 +94,7 @@ th {
 
   .mat-form-field {
     font-size: 14px;
-    width: 40vh;
+    width: 100%;
     font-family: Prompt;
   }
 
@@ -138,6 +139,97 @@ th {
         padding: 0 48px 0 16px;
         a {
           font-size: 2rem;          
+          color: #3e75ff;
+        }
+        &:before {
+          display: none;
+        }
+      }
+      &.m-card-sub-title {
+        margin-top: -8px;
+        padding: 0 48px 0 16px;
+        color: rgba(0, 0, 0, 0.54);
+      }
+      &.m-card-title {
+          font-size: 2vw;
+      }
+      
+    }
+
+    .has_label_on_mobile {
+      &:before {
+        content: attr(data-label);
+        display: inline;
+        font-weight: bold;
+      }
+    }
+
+  }
+
+  .mat-paginator {
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 450px) {
+  .header h2 {
+    color: white;
+    font-size: 21px;
+  }
+  .mat-elevation-z8 {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+    font-family: Prompt;
+  }
+
+  .mat-header-row {
+    display: none;
+  }
+
+  tbody {
+    display: block;
+    width: 100%;
+    font-family: Prompt;
+  }
+
+  .mat-table {
+    background: transparent;
+    * {
+      box-sizing: border-box;
+    }
+
+    .mat-row {
+      display: block;
+      overflow: hidden;
+      height: auto;
+      position: relative;
+      clear: both;
+      box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2),
+        0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+      background-color: #fff;
+      border-radius: 7px;
+      + .mat-row {
+        margin-top: 24px;
+      }
+    }
+
+    .mat-cell {
+      display: block;
+      width: 100%;
+      padding: 0 16px;
+      margin: 16px 0;
+      border: 0 none;
+      &:first-child {
+        padding: 0 48px 0 16px;
+        a {
+          font-size: 20px;
+          // font-weight: 400;
+          
           color: #3e75ff;
         }
         &:before {

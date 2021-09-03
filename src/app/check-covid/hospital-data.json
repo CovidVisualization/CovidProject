@@ -1,6 +1,6 @@
 [
   {
-    "name": "รพ. วชิระ",
+    "name": "โรงพยาบาลวชิระ",
     "district": "กรุงเทพมหานคร",
     "province": "ดุสิต",
     "type": "RT-PCR",
@@ -43,6 +43,15 @@
     "typeEnter": "ตรวจที่คลินิก",
     "price": "650 บาท",
     "location": "https://goo.gl/maps/Wk7457C7EV2anbyv8"
+  },
+  {
+    "name": "รพ. Mansea",
+    "district": "กรุงเทพมหานคร",
+    "province": "ลาดพร้าว",
+    "type": "RT-PCR",
+    "typeEnter": "Drive-Thu",
+    "price": "1500 บาท",
+    "location": "goole map"
   },
   {
     "name": "รพ. Mansea",
