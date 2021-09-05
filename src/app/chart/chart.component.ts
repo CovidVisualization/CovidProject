@@ -35,7 +35,7 @@ export class ChartComponent implements OnInit {
       this.data = {
         labels: date_lebels,
         datasets: [{
-          label: '# of infected',
+          label: 'ผูู้ติดเชื้อ',
           data: date_newCase,
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',

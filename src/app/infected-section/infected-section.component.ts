@@ -8,22 +8,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfectedSectionComponent implements OnInit {
 
-  amountInfected = 0;
-  amountInfectedToday = 0;
-  amountHealing = 0;
-  amountHealed = 0;
-  amountDeath = 0;
+  amountInfected = "";
+  amountInfectedToday = "";
+  amountHealing = "";
+  amountHealed = "";
+  amountDeath = "";
 
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     this.http.get<any>('http://25.58.26.212/covid/api/covid/totalcovid').subscribe(data => {
       
-      this.amountInfected = data[0].totalnew
-      this.amountInfectedToday = data[0].newCase
-      this.amountHealing = data[0].healing
-      this.amountHealed = data[0].healed
-      this.amountDeath = data[0].dead
+      var intTotal: number = +data[0].totalnew;
+      this.amountInfected = intTotal.toLocaleString();
+
+      var intTotalToday: number = +data[0].newCase;
+      this.amountInfectedToday = intTotalToday.toLocaleString();
+
+      var intHealing: number = +data[0].healing
+      this.amountHealing = intHealing.toLocaleString()
+
+      var intHealed: number = +data[0].healed
+      this.amountHealed = intHealed.toLocaleString()
+
+      var intDeath: number = +data[0].dead
+      this.amountDeath = intDeath.toLocaleString()
 
     })
   }
