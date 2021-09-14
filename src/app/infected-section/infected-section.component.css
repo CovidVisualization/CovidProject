@@ -11,15 +11,21 @@
     font-size: 600%;
     text-align: left;
 }
+.bg-section h3{
+    color: white;
+    font-size: 300%;
+    text-align: center;
+}
 .bg-section h4{
     color: white;
     font-size: 28px;
     text-align: center;
 }
-.bg-section h3{
-    color: white;
-    font-size: 300%;
+.bg-section h5{
+    color: #f26c4f;
+    font-size: 220%;
     text-align: center;
+    padding-top: 20px;
 }
 
 a.anchor {
@@ -30,7 +36,7 @@ a.anchor {
 }
 
 .header {
-    padding-bottom: 3%;
+    padding-bottom: 2%;
 }
 
 .header h1{

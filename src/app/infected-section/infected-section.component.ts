@@ -13,6 +13,7 @@ export class InfectedSectionComponent implements OnInit {
   amountHealing = "";
   amountHealed = "";
   amountDeath = "";
+  informationDate = "";
 
   constructor(private http: HttpClient) { }
 
@@ -20,19 +21,34 @@ export class InfectedSectionComponent implements OnInit {
     this.http.get<any>('http://25.58.26.212/covid/api/covid/totalcovid').subscribe(data => {
       
       var intTotal: number = +data[0].totalnew;
-      this.amountInfected = intTotal.toLocaleString();
-
+      if (intTotal.toLocaleString() != "") {
+        this.amountInfected = intTotal.toLocaleString();
+      }
+      
       var intTotalToday: number = +data[0].newCase;
-      this.amountInfectedToday = intTotalToday.toLocaleString();
-
+      if (intTotalToday.toLocaleString() != "") {
+        this.amountInfectedToday = intTotalToday.toLocaleString();
+      }
+      
       var intHealing: number = +data[0].healing
-      this.amountHealing = intHealing.toLocaleString()
-
+      if (intHealing.toLocaleString() != "") {
+        this.amountHealing = intHealing.toLocaleString()
+      }
+      
       var intHealed: number = +data[0].healed
-      this.amountHealed = intHealed.toLocaleString()
+      if (intHealed.toLocaleString() != "") {
+        this.amountHealed = intHealed.toLocaleString()
+      }
 
       var intDeath: number = +data[0].dead
-      this.amountDeath = intDeath.toLocaleString()
+      if (intDeath.toLocaleString() != "") {
+        this.amountDeath = intDeath.toLocaleString()
+      }
+
+      var charDate: any = data[0].date
+      if (charDate.toLocaleString() != "") {
+        this.informationDate = charDate.toLocaleString()
+      }
 
     })
   }
