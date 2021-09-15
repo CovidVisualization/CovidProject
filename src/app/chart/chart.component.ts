@@ -33,7 +33,7 @@ export class ChartComponent implements OnInit {
 
       let date_lebels: string[] = [];
       let date_newCase: string[] = [];
-      let data_dead: string[] = [];
+      let data_healed: string[] = [];
 
       console.log(date_newCase);
 
@@ -46,7 +46,7 @@ export class ChartComponent implements OnInit {
       );
 
       Object.entries(data).forEach(
-        ([key, value]) => data_dead.push(value["dead"])
+        ([key, value]) => data_healed.push(value["healed"])
       );
 
       // date_newCase.splice(15, 0, '0');
@@ -57,20 +57,20 @@ export class ChartComponent implements OnInit {
           label: 'ผูู้ติดเชื้อ',
           data: date_newCase.slice(-7),
           backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
+            'rgba(255, 99, 132, 0.4)'
           ],
           borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
+            'rgba(255, 99, 132, 1)'
+          ],
+          borderWidth: 1
+        }, {
+          label: 'รักษาหาย',
+          data: data_healed.slice(-7),
+          backgroundColor: [
+            'rgba(127, 191, 63, 0.2)'
+          ],
+          borderColor: [
+            'rgba(76, 114, 38, 1)'
           ],
           borderWidth: 1
         }]
@@ -82,20 +82,20 @@ export class ChartComponent implements OnInit {
           label: 'ผูู้ติดเชื้อ',
           data: date_newCase.slice(-14),
           backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
+            'rgba(255, 99, 132, 0.4)'
           ],
           borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
+            'rgba(255, 99, 132, 1)'
+          ],
+          borderWidth: 1
+        }, {
+          label: 'รักษาหาย',
+          data: data_healed.slice(-14),
+          backgroundColor: [
+            'rgba(127, 191, 63, 0.2)'
+          ],
+          borderColor: [
+            'rgba(76, 114, 38, 1)'
           ],
           borderWidth: 1
         }]
@@ -107,40 +107,20 @@ export class ChartComponent implements OnInit {
           label: 'ผูู้ติดเชื้อ',
           data: date_newCase,
           backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
+            'rgba(255, 99, 132, 0.4)'
           ],
           borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
+            'rgba(255, 99, 132, 1)'
           ],
           borderWidth: 1
         }, {
-          label: 'dead people',
-          data: data_dead,
+          label: 'รักษาหาย',
+          data: data_healed,
           backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
+            'rgba(127, 191, 63, 0.2)'
           ],
           borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
+            'rgba(76, 114, 38, 1)'
           ],
           borderWidth: 1
         }]

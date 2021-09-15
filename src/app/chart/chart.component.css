@@ -13,7 +13,7 @@ a.anchor {
 }
 
 .header {
-    padding-bottom: 10vh;
+    padding-bottom: 1vh;
 }
 
 .header h1 {
@@ -25,3 +25,8 @@ a.anchor {
     font-size: 3vh;
 }
 
+.chartCss {
+    display: block;
+    width: auto;
+    height: 50%;
+}
