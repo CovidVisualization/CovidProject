@@ -8,7 +8,8 @@
     aria-controls="navbarSupportedContent"
     aria-expanded="false"
     aria-label="Toggle navigation"
-    (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed"
+    (click)="isCollapsed = !isCollapsed"
+    [attr.aria-expanded]="!isCollapsed"
   >
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -31,7 +32,9 @@
       <li class="nav-item">
         <a class="nav-link" href="#check-covid">ตรวจโควิด</a>
       </li>
+      <li class="nav-item">
+        <a id="loginButton" class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+      </li>
     </ul>
   </div>
 </nav>
-
