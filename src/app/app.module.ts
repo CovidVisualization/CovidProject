@@ -54,7 +54,8 @@ const routes: Routes = [
     MatInputModule,
     MatSortModule,
     HttpClientModule,
-    MatIconModule
+    MatIconModule,
+    RouterModule.forRoot(routes)
 
   ],
 
