@@ -41,6 +41,8 @@ const routes: Routes = [
     NavbarComponent,
     ChartComponent,
     MapSectionComponent,
+    LoginComponent,
+    ContentComponent,
   ],
   imports: [
     BrowserModule,
