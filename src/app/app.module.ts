@@ -28,6 +28,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { ContentComponent } from './pages/content/content.component';
 import { RouterModule, Routes } from '@angular/router';
 
+import { FormsModule } from '@angular/forms';
+
 const routes: Routes = [
   { path: "", component: ContentComponent },
   { path: "login", component: LoginComponent }
@@ -57,7 +59,8 @@ const routes: Routes = [
     MatSortModule,
     HttpClientModule,
     MatIconModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FormsModule
 
   ],
 
