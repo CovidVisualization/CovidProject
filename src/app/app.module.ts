@@ -24,6 +24,14 @@ import {MatIconModule} from '@angular/material/icon';
 
 import { HttpClientModule } from '@angular/common/http';
 
+import { LoginComponent } from './pages/login/login.component';
+import { ContentComponent } from './pages/content/content.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  { path: "", component: ContentComponent },
+  { path: "login", component: LoginComponent }
+]
 
 @NgModule({
   declarations: [
