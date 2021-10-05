@@ -14,3 +14,11 @@ a.anchor {
 #divmap {
     height: 100%;
 }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 20% auto;
+    /* grid-gap: 10px; */
+    background-color: #2196F3;
+    /* padding: 10px; */
+  }
