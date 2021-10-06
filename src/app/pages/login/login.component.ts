@@ -17,6 +17,19 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  log (x: any) {
+    // console.log(x)
+  }
+
+  compairUserPassword(retypePassword: any, userPassword: any) {
+    const retypePass = retypePassword.value;
+    const userPass = userPassword.value;
+    // console.log(retypePass, userPass)
+    if (retypePass != userPass){
+      return true;
+    }
+    return false;
+  }
 
   LoginButtonClick() {
     this.displayLogin = true;
@@ -45,8 +58,13 @@ export class LoginComponent implements OnInit {
   onRegister(registerFrom: NgForm): void {
     const registerToken = registerFrom.value;
     console.log(registerToken);
-    // console.log(registerToken.userEmail);
-    // console.log(registerToken.password);
-  }
 
+    if (registerToken.password.length < 6) {
+      alert("Password must greater than or equal to 6.");
+
+    }
+
+
+
+  }
 }
