@@ -21,7 +21,7 @@
   <script>
     var post;
 
-    fetch('http://25.58.26.212/coviD/api/covid/location')
+    fetch('http://localhost:4200/proxy/coviD/api/covid/location')
       .then(function (response) {
         if (response.ok) {
           return response.json();
@@ -30,7 +30,7 @@
         }
       }).then(function (data) {
         post = data;
-        return fetch('http://25.58.26.212/covid/api/covid/province');
+        return fetch('http://localhost:4200/proxy/covid/api/covid/province');
       }).then(function (response) {
           if (response.ok) {
             return response.json();

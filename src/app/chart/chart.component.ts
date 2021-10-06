@@ -29,7 +29,7 @@ export class ChartComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get('http://25.58.26.212/coviD/api/covid/totalMonth').subscribe(data => {
+    this.http.get('http://localhost:4200/proxy/coviD/api/covid/totalMonth').subscribe(data => {
 
       let date_lebels: string[] = [];
       let date_newCase: string[] = [];
