@@ -51,20 +51,29 @@ export class LoginComponent implements OnInit {
 
   onLogin(loginFrom: NgForm): void {
     const loginToken = loginFrom.value;
-    console.log(loginToken.userEmail);
-    console.log(loginToken.password);
+
+    const jsonObj = [];
+    let item : any = {}
+    item.userEmail = loginToken.userEmail;
+    item.userPassword = loginToken.password;
+
+    jsonObj.push(item);
+    console.log(jsonObj);
   }
 
   onRegister(registerFrom: NgForm): void {
     const registerToken = registerFrom.value;
-    console.log(registerToken);
 
-    if (registerToken.password.length < 6) {
-      alert("Password must greater than or equal to 6.");
+    const jsonObj = [];
+    const item : any= {}
+    item.userEmail = registerToken.userEmail
+    item.userName = registerToken.userName
+    item.userSurname = registerToken.userSurname
+    item.password = registerToken.userPassword
+    item.province = registerToken.province
 
-    }
-
-
+    jsonObj.push(item);
+    console.log(jsonObj);
 
   }
 }
