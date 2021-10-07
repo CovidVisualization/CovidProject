@@ -1,174 +1,177 @@
-<div class="selectLoginRegister">
-    <button class="btn btn-primary" type="button" (click)="LoginButtonClick()">Login</button>
-    <button class="btn btn-primary" type="button" (click)="RegisterButtonClick()">Register</button>
-</div>
+<div class="center">
+    <div class="selectLoginRegister">
+        <button class="btn btn-primary" type="button" (click)="LoginButtonClick()">Login</button>
+        <button class="btn btn-primary" type="button" (click)="RegisterButtonClick()">Register</button>
+    </div>
 
+    <div class="container">
+        <div *ngIf="wantToLogin()" class="card-body" id="loginContainer">
+            <p>Login</p>
+            <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)">
+                <div class="form-group col-12">
+                    <label>Email</label>
+                    <input class="from-control" type="email" required ngModel name="userEmail" #userEmail="ngModel" (change)="log(userEmail)">
+                    <div class="alert-danger" *ngIf="userEmail.touched && !userEmail.valid">Email is required</div>
+                </div>
 
-<div *ngIf="wantToLogin()" class="card-body">
-    <p>Login</p>
-    <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)">
-        <div class="form-group col-12">
-            <label>Email</label>
-            <input class="from-control" type="email" required ngModel name="userEmail" #userEmail="ngModel" (change)="log(userEmail)">
-            <div class="alert-danger" *ngIf="userEmail.touched && !userEmail.valid">Email is required</div>
+                <div class="form-group col-12">
+                    <label>Password</label>
+                    <input class="from-control" required type="password" ngModel name="password" #password="ngModel" (change)="log(password)">
+                    <div class="alert-danger" *ngIf="password.touched && !password.valid">Password is required</div>
+                </div>
+
+                <div class="form-group col-12">
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <button type="button" class="btn btn-primary">Cancel</button>
+                </div>
+            </form>
         </div>
 
-        <div class="form-group col-12">
-            <label>Password</label>
-            <input class="from-control" required type="password" ngModel name="password" #password="ngModel" (change)="log(password)">
-            <div class="alert-danger" *ngIf="password.touched && !password.valid">Password is required</div>
-        </div>
+        <div *ngIf="wantToRegister()" class="card-body" id="registerContainer">
+            <p>Register</p>
+            <form #registerForm="ngForm" (ngSubmit)="onRegister(registerForm)">
+                <!-- Email -->
+                <div class="form-group col-12">
+                    <label>Email</label>
+                    <input class="from-control" type="email" required ngModel name="userEmail" #userEmail="ngModel" (change)="log(userEmail)">
+                    <div class="alert-danger" *ngIf="userEmail.touched && !userEmail.valid">Email is required</div>
+                </div>
 
-        <div class="form-group col-12">
-            <button type="submit" class="btn btn-primary">Login</button>
-            <button type="button" class="btn btn-primary">Cancel</button>
-        </div>
-    </form>
-</div>
+                <!-- Name -->
+                <div class="form-group col-12">
+                    <label>FirstName</label>
+                    <input class="from-control" required ngModel name="userName" #userName="ngModel" (change)="log(userName)">
+                    <div class="alert-danger" *ngIf="userName.touched && !userName.valid">
+                        Firstname is required.
+                        <!-- <div *ngIf="userName.errors.required">FirstName is required.</div> -->
+                    </div>
+                </div>
 
-<div *ngIf="wantToRegister()" class="card-body">
-    <p>Register</p>
-    <form #registerForm="ngForm" (ngSubmit)="onRegister(registerForm)">
-        <!-- Email -->
-        <div class="form-group col-12">
-            <label>Email</label>
-            <input class="from-control" type="email" required ngModel name="userEmail" #userEmail="ngModel" (change)="log(userEmail)">
-            <div class="alert-danger" *ngIf="userEmail.touched && !userEmail.valid">Email is required</div>
-        </div>
+                <!-- Surname -->
+                <div class="form-group col-12">
+                    <label>Surname</label>
+                    <input class="from-control" required ngModel name="userSurname" #userSurname="ngModel" (change)="log(userSurname)">
+                    <div class="alert-danger" *ngIf="userSurname.touched && !userSurname.valid">
+                        Surname is required.
+                        <!-- <div *ngIf="userName.errors.required">FirstName is required.</div> -->
+                    </div>
+                </div>
 
-        <!-- Name -->
-        <div class="form-group col-12">
-            <label>FirstName</label>
-            <input class="from-control" required ngModel name="userName" #userName="ngModel" (change)="log(userName)">
-            <div class="alert-danger" *ngIf="userName.touched && !userName.valid">
-                Firstname is required.
-                <!-- <div *ngIf="userName.errors.required">FirstName is required.</div> -->
-            </div>
-        </div>
+                <!-- Password -->
+                <div class="form-group col-12">
+                    <label>Password</label>
+                    <input required minlength="6" maxlength="20" type="password" ngModel name="userPassword" #userPassword="ngModel" (change)="log(userPassword)">
+                    <div class="alert-danger" *ngIf="userPassword.touched && !userPassword.valid">
+                        <div *ngIf="userPassword.errors?.minlength">Password should at least be 6 characters long.</div>
+                        <div *ngIf="userPassword.errors?.maxlength">Password should not exceed 20 characters long.</div>
+                        <div *ngIf="userPassword.errors?.required">Password is required</div>
+                    </div>
+                </div>
 
-        <!-- Surname -->
-        <div class="form-group col-12">
-            <label>Surname</label>
-            <input class="from-control" required ngModel name="userSurname" #userSurname="ngModel" (change)="log(userSurname)">
-            <div class="alert-danger" *ngIf="userSurname.touched && !userSurname.valid">
-                Surname is required.
-                <!-- <div *ngIf="userName.errors.required">FirstName is required.</div> -->
-            </div>
-        </div>
-
-        <!-- Password -->
-        <div class="form-group col-12">
-            <label>Password</label>
-            <input required minlength="6" maxlength="20" type="password" ngModel name="userPassword" #userPassword="ngModel" (change)="log(userPassword)">
-            <div class="alert-danger" *ngIf="userPassword.touched && !userPassword.valid">
-                <div *ngIf="userPassword.errors?.minlength">Password should at least be 6 characters long.</div>
-                <div *ngIf="userPassword.errors?.maxlength">Password should not exceed 20 characters long.</div>
-                <div *ngIf="userPassword.errors?.required">Password is required</div>
-            </div>
-        </div>
-
-        <div class="form-group col-12">
-            <label>Retype Password</label>
-            <input class="from-control" required minlength="6" maxlength="20" type="password" ngModel name="retypePassword" #retypePassword="ngModel" (change)="log(retypePassword)">
-            <div class="alert-danger" *ngIf="retypePassword.touched && !retypePassword.valid || compairUserPassword(retypePassword, userPassword)">
-                <div *ngIf="retypePassword.errors?.minlength">Password should at least be 6 characters long.</div>
-                <div *ngIf="retypePassword.errors?.maxlength">Password should not exceed 20 characters long.</div>
-                <div *ngIf="retypePassword.errors?.required">Password is required</div>
-                <div *ngIf="compairUserPassword(retypePassword, userPassword)">Password is not the same</div>
-            </div>
-        </div>
+                <div class="form-group col-12">
+                    <label>Retype Password</label>
+                    <input class="from-control" required minlength="6" maxlength="20" type="password" ngModel name="retypePassword" #retypePassword="ngModel" (change)="log(retypePassword)">
+                    <div class="alert-danger" *ngIf="retypePassword.touched && !retypePassword.valid || compairUserPassword(retypePassword, userPassword)">
+                        <div *ngIf="retypePassword.errors?.minlength">Password should at least be 6 characters long.</div>
+                        <div *ngIf="retypePassword.errors?.maxlength">Password should not exceed 20 characters long.</div>
+                        <div *ngIf="retypePassword.errors?.required">Password is required</div>
+                        <div *ngIf="compairUserPassword(retypePassword, userPassword)">Password is not the same</div>
+                    </div>
+                </div>
 
 
-        <!-- Province -->
-        <label for="exampleDataList" class="form-group col-12">Province</label>
-        <input class="form-control" required list="datalistOptions" id="exampleDataList" placeholder="Type to search..." ngModel name="province" #province="ngModel" (change)="log(province)">
-        <div class="alert-danger" *ngIf="province.touched && !province.valid">
-            province is required.
-        </div>
-        <datalist id="datalistOptions">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="ฟกฟไก">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-            <option value="นครราชสีมา">
-        </datalist>
+                <!-- Province -->
+                <label for="exampleDataList" class="form-group col-12">Province</label>
+                <input class="form-control" required list="datalistOptions" id="exampleDataList" placeholder="Type to search..." ngModel name="province" #province="ngModel" (change)="log(province)">
+                <div class="alert-danger" *ngIf="province.touched && !province.valid">
+                    province is required.
+                </div>
+                <datalist id="datalistOptions">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="ฟกฟไก">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                    <option value="นครราชสีมา">
+                </datalist>
 
-        <!-- Button -->
-        <div class="form-group col-12">
-            <button type="submit" class="btn btn-primary">Register</button>
-            <button type="button" class="btn btn-primary">Cancel</button>
+                <!-- Button -->
+                <div class="form-group col-12">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                    <button type="button" class="btn btn-primary">Cancel</button>
+                </div>
+            </form>
         </div>
-    </form>
+    </div>
 </div>
