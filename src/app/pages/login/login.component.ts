@@ -118,12 +118,7 @@ export class LoginComponent implements OnInit {
     }
     try {
       registerForm.form.controls['province'].setErrors({'invalid': true});
-    } catch {
-      
-    }
-    
-    // province.setErrors({'invalid': true});
-    // province.$setValidity("invalid", true);
+    } catch { }
     return true;
   }
 
