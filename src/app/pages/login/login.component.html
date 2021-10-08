@@ -119,9 +119,9 @@
                                 placeholder="Type to search..." ngModel name="province" #province="ngModel"
                                 (change)="log(province)" />
                             <div class="alert-danger" *ngIf="(province.touched && !province.valid) || 
-                                (checkProvince(province) && province.touched)">
-                                <div *ngIf="province.errors?.required">province is required.</div>
-                                <div *ngIf="checkProvince(province)"></div>
+                                (checkProvince(province, registerForm) && province.touched)">
+                                <div *ngIf="province.errors?.required">Province is required.</div>
+                                <div *ngIf="checkProvince(province, registerForm)">Province is misspelled.</div>
                             </div>
                             <datalist id="datalistOptions">
                                 <option value="นครราชสีมา"></option>

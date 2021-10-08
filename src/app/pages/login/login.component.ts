@@ -98,7 +98,7 @@ export class LoginComponent implements OnInit {
   }
 
   log (x: any) {
-    console.log(x)
+    // console.log(x)
   }
 
   compairUserPassword(retypePassword: any, userPassword: any) {
@@ -110,14 +110,20 @@ export class LoginComponent implements OnInit {
     return false;
   }
 
-  checkProvince(province : any) {
+  checkProvince(province : any, registerForm : NgForm) {
     const selectProvince = province.value;
     // console.log(this.province_th.includes(selectProvince))
     if (this.province_th.includes(selectProvince)) {
       return false;
     }
+    try {
+      registerForm.form.controls['province'].setErrors({'invalid': true});
+    } catch {
+      
+    }
+    
     // province.setErrors({'invalid': true});
-    province.$setValidity("invalid", true);
+    // province.$setValidity("invalid", true);
     return true;
   }
 
