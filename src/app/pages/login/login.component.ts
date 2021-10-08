@@ -11,6 +11,86 @@ export class LoginComponent implements OnInit {
   displayLogin = true;
   displayRegister = false;
 
+  province_th : String[] = [
+    'กรุงเทพฯ',
+    'กระบี่',
+    'กาญจนบุรี',
+    'กาฬสินธุ์',
+    'กำแพงเพชร',
+    'ขอนแก่น',
+    'จันทบุรี',
+    'ฉะเชิงเทรา',
+    'ชลบุรี',
+    'ชัยนาท',
+    'ชัยภูมิ',
+    'ชุมพร',
+    'เชียงใหม่',
+    'เชียงราย',
+    'ตรัง',
+    'ตราด',
+    'ตาก',
+    'นครนายก',
+    'นครปฐม',
+    'นครพนม',
+    'นครราชสีมา',
+    'นครศรีธรรมราช',
+    'นครสวรรค์',
+    'นนทบุรี',
+    'นราธิวาส',
+    'น่าน',
+    'บึงกาฬ',
+    'บุรีรัมย์',
+    'ปทุมธานี',
+    'ประจวบคีรีขันธ์',
+    'ปราจีนบุรี',
+    'ปัตตานี',
+    'พระนครศรีอยุธยา',
+    'พะเยา',
+    'พังงา',
+    'พัทลุง',
+    'พิจิตร',
+    'พิษณุโลก',
+    'เพชรบุรี',
+    'เพชรบูรณ์',
+    'แพร่',
+    'ภูเก็ต',
+    'มหาสารคาม',
+    'มุกดาหาร',
+    'แม่ฮ่องสอน',
+    'ยโสธร',
+    'ยะลา',
+    'ร้อยเอ็ด',
+    'ระนอง',
+    'ระยอง',
+    'ราชบุรี',
+    'ลพบุรี',
+    'ลำปาง',
+    'ลำพูน',
+    'เลย',
+    'ศรีสะเกษ',
+    'สกลนคร',
+    'สงขลา',
+    'สตูล',
+    'สมุทรปราการ',
+    'สมุทรสงคราม',
+    'สมุทรสาคร',
+    'สระแก้ว',
+    'สระบุรี',
+    'สิงห์บุรี',
+    'สุโขทัย',
+    'สุพรรณบุรี',
+    'สุราษฎร์ธานี',
+    'สุรินทร์',
+    'หนองคาย',
+    'หนองบัวลำภู',
+    'อ่างทอง',
+    'อำนาจเจริญ',
+    'อุดรธานี',
+    'อุตรดิตถ์',
+    'อุทัยธานี',
+    'อุบลราชธานี',
+  ];
+
   constructor() {
   }
 
@@ -18,17 +98,27 @@ export class LoginComponent implements OnInit {
   }
 
   log (x: any) {
-    // console.log(x)
+    console.log(x)
   }
 
   compairUserPassword(retypePassword: any, userPassword: any) {
     const retypePass = retypePassword.value;
     const userPass = userPassword.value;
-    // console.log(retypePass, userPass)
     if (retypePass != userPass){
       return true;
     }
     return false;
+  }
+
+  checkProvince(province : any) {
+    const selectProvince = province.value;
+    // console.log(this.province_th.includes(selectProvince))
+    if (this.province_th.includes(selectProvince)) {
+      return false;
+    }
+    // province.setErrors({'invalid': true});
+    province.$setValidity("invalid", true);
+    return true;
   }
 
   LoginButtonClick() {

@@ -118,8 +118,10 @@
                             <input class="form-control" required list="datalistOptions" id="exampleDataList"
                                 placeholder="Type to search..." ngModel name="province" #province="ngModel"
                                 (change)="log(province)" />
-                            <div class="alert-danger" *ngIf="province.touched && !province.valid">
-                                province is required.
+                            <div class="alert-danger" *ngIf="(province.touched && !province.valid) || 
+                                (checkProvince(province) && province.touched)">
+                                <div *ngIf="province.errors?.required">province is required.</div>
+                                <div *ngIf="checkProvince(province)"></div>
                             </div>
                             <datalist id="datalistOptions">
                                 <option value="นครราชสีมา"></option>
