@@ -57,6 +57,7 @@
         </div>
 
 
+<<<<<<< HEAD
         <!-- Province -->
         <label for="exampleDataList" class="form-group col-12">Province</label>
         <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search..." ngModel
@@ -140,6 +141,98 @@
             <option value="นครราชสีมา">
             <option value="นครราชสีมา">
         </datalist>
+=======
+                            <!-- Province -->
+                            <br><br><label for="exampleDataList">Province</label><br>
+                            <input class="form-control" required list="datalistOptions" id="exampleDataList"
+                                placeholder="Type to search..." ngModel name="province" #province="ngModel"
+                                (change)="log(province)" />
+                            <div class="alert-danger" *ngIf="(province.touched && !province.valid) || 
+                                (checkProvince(province) && province.touched)">
+                                <div *ngIf="province.errors?.required">province is required.</div>
+                                <div *ngIf="checkProvince(province)"></div>
+                            </div>
+                            <datalist id="datalistOptions">
+                                <option value="นครราชสีมา"></option>
+                                <option value="เชียงใหม่"></option>
+                                <option value="กาญจนบุรี"></option>
+                                <option value="ตาก"></option>
+                                <option value="อุบลราชธานี"></option>
+                                <option value="สุราษฎร์ธานี"></option>
+                                <option value="ชัยภูมิ"></option>
+                                <option value="แม่ฮ่องสอน"></option>
+                                <option value="เพชรบูรณ์"></option>
+                                <option value="ลำปาง"></option>
+                                <option value="อุดรธานี"></option>
+                                <option value="เชียงราย"></option>
+                                <option value="น่าน"></option>
+                                <option value="เลย"></option>
+                                <option value="ขอนแก่น"></option>
+                                <option value="พิษณุโลก"></option>
+                                <option value="บุรีรัมย์"></option>
+                                <option value="นครศรีธรรมราช"></option>
+                                <option value="สกลนคร"></option>
+                                <option value="นครสวรรค์"></option>
+                                <option value="ศรีสะเกษ"></option>
+                                <option value="กำแพงเพชร"></option>
+                                <option value="ร้อยเอ็ด"></option>
+                                <option value="สุรินทร์"></option>
+                                <option value="อุตรดิตถ์"></option>
+                                <option value="สงขลา"></option>
+                                <option value="สระแก้ว"></option>
+                                <option value="กาฬสินธุ์"></option>
+                                <option value="อุทัยธานี"></option>
+                                <option value="สุโขทัย"></option>
+                                <option value="แพร่"></option>
+                                <option value="ประจวบคีรีขันธ์"></option>
+                                <option value="จันทบุรี"></option>
+                                <option value="พะเยา"></option>
+                                <option value="เพชรบุรี"></option>
+                                <option value="ลพบุรี"></option>
+                                <option value="ชุมพร"></option>
+                                <option value="นครพนม"></option>
+                                <option value="สุพรรณบุรี"></option>
+                                <option value="ฉะเชิงเทรา"></option>
+                                <option value="มหาสารคาม"></option>
+                                <option value="ราชบุรี"></option>
+                                <option value="ตรัง"></option>
+                                <option value="ปราจีนบุรี"></option>
+                                <option value="กระบี่"></option>
+                                <option value="พิจิตร"></option>
+                                <option value="ยะลา"></option>
+                                <option value="ลำพูน"></option>
+                                <option value="นราธิวาส"></option>
+                                <option value="ชลบุรี"></option>
+                                <option value="มุกดาหาร"></option>
+                                <option value="บึงกาฬ"></option>
+                                <option value="พังงา"></option>
+                                <option value="ยโสธร"></option>
+                                <option value="หนองบัวลำภู"></option>
+                                <option value="สระบุรี"></option>
+                                <option value="ระยอง"></option>
+                                <option value="พัทลุง"></option>
+                                <option value="ระนอง"></option>
+                                <option value="อำนาจเจริญ"></option>
+                                <option value="หนองคาย"></option>
+                                <option value="ตราด"></option>
+                                <option value="พระนครศรีอยุธยา"></option>
+                                <option value="สตูล"></option>
+                                <option value="ชัยนาท"></option>
+                                <option value="นครปฐม"></option>
+                                <option value="นครนายก"></option>
+                                <option value="ปัตตานี"></option>
+                                <option value="กรุงเทพมหานคร"></option>
+                                <option value="ปทุมธานี"></option>
+                                <option value="สมุทรปราการ"></option>
+                                <option value="อ่างทอง"></option>
+                                <option value="สมุทรสาคร"></option>
+                                <option value="สิงห์บุรี"></option>
+                                <option value="นนทบุรี"></option>
+                                <option value="ภูเก็ต"></option>
+                                <option value="สมุทรสงคราม"></option>
+                            </datalist>
+                        </div>
+>>>>>>> parent of 5335f2e (login register input validation **done)
 
         <!-- Button -->
         <div class="form-group col-12">

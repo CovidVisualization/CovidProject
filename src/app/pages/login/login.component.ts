@@ -17,6 +17,32 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+<<<<<<< HEAD
+=======
+  log (x: any) {
+    console.log(x)
+  }
+
+  compairUserPassword(retypePassword: any, userPassword: any) {
+    const retypePass = retypePassword.value;
+    const userPass = userPassword.value;
+    if (retypePass != userPass){
+      return true;
+    }
+    return false;
+  }
+
+  checkProvince(province : any) {
+    const selectProvince = province.value;
+    // console.log(this.province_th.includes(selectProvince))
+    if (this.province_th.includes(selectProvince)) {
+      return false;
+    }
+    // province.setErrors({'invalid': true});
+    province.$setValidity("invalid", true);
+    return true;
+  }
+>>>>>>> parent of 5335f2e (login register input validation **done)
 
   LoginButtonClick() {
     this.displayLogin = true;
