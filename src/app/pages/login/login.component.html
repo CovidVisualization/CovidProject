@@ -18,9 +18,10 @@
                         <div class="form-group col-12">
                             <label>Email</label><br />
                             <input class="from-control" type="email" required ngModel name="userEmail"
-                                #userEmail="ngModel" (change)="log(userEmail)" />
+                                #userEmail="ngModel" (change)="log(userEmail)" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
                             <div class="alert-danger" *ngIf="userEmail.touched && !userEmail.valid">
-                                Email is required
+                                <div class="alert-danger" *ngIf="userEmail.errors?.required">Email is required</div>
+                                <div class="alert-danger" *ngIf="userEmail.errors?.pattern">Email is in incorrect form.</div>
                             </div>
                         </div>
 
@@ -46,9 +47,10 @@
                         <div class="form-group col-12">
                             <label>Email</label><br>
                             <input class="from-control" type="email" required ngModel name="userEmail"
-                                #userEmail="ngModel" (change)="log(userEmail)" />
+                                #userEmail="ngModel" (change)="log(userEmail)" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/>
                             <div class="alert-danger" *ngIf="userEmail.touched && !userEmail.valid">
-                                Email is required
+                                <div class="alert-danger" *ngIf="userEmail.errors?.required">Email is required</div>
+                                <div class="alert-danger" *ngIf="userEmail.errors?.pattern">Email is in incorrect form.</div>
                             </div>
                         </div>
 
@@ -78,16 +80,19 @@
                         <div class="form-group col-12">
                             <label>Password</label><br>
                             <input class="from-control" required minlength="6" maxlength="20" type="password" ngModel
-                                name="userPassword" #userPassword="ngModel" (change)="log(userPassword)" />
+                                name="userPassword" #userPassword="ngModel" (change)="log(userPassword)" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"/>
                             <div class="alert-danger" *ngIf="userPassword.touched && !userPassword.valid">
                                 <div *ngIf="userPassword.errors?.minlength">
-                                    Password should at least be 6 characters long.
+                                    Password must be at least 6 characters long.
                                 </div>
                                 <div *ngIf="userPassword.errors?.maxlength">
                                     Password should not exceed 20 characters long.
                                 </div>
                                 <div *ngIf="userPassword.errors?.required">
-                                    Password is required
+                                    Password is required.
+                                </div>
+                                <div *ngIf="userPassword.errors?.pattern">
+                                    Password must contain at least one number, one lowercase letter and one uppercase letter.
                                 </div>
                             </div>
                         </div>
@@ -95,7 +100,7 @@
                         <div class="form-group col-12">
                             <label>Retype Password</label><br>
                             <input class="from-control" required minlength="6" maxlength="20" type="password" ngModel
-                                name="retypePassword" #retypePassword="ngModel" (change)="log(retypePassword)" />
+                                name="retypePassword" #retypePassword="ngModel" (change)="log(retypePassword)" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"/>
                             <div class="alert-danger" *ngIf="(retypePassword.touched && !retypePassword.valid) || 
                                 compairUserPassword(retypePassword, userPassword)">
                                 <div *ngIf="retypePassword.errors?.minlength">
