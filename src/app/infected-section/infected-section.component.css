@@ -1,7 +1,8 @@
 .bg-section {
     width: auto;
     height: auto;
-    background-color: #313131;
+    /* background-color: #313131; */
+    background-image: linear-gradient(#000000 0%,#313131 50%,#535353 100%);
     padding-bottom: 50px;
     padding: 2%;
 }
@@ -10,22 +11,35 @@
     color: white;
     font-size: 600%;
     text-align: left;
+    text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4);
 }
+
+.bg-section h2{
+    text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4);
+}
+
 .bg-section h3{
     color: white;
     font-size: 300%;
     text-align: center;
+    text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4);
 }
 .bg-section h4{
     color: white;
     font-size: 28px;
     text-align: center;
+    text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4);
 }
 .bg-section h5{
     color: #f26c4f;
     font-size: 220%;
     text-align: center;
     padding-top: 20px;
+    text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4);
+}
+
+.bg-section h6{
+    text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4);
 }
 
 a.anchor {
@@ -43,6 +57,7 @@ a.anchor {
     color: white;
     font-size: 50px;
     text-align: center;
+    text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4);
 }
 
 .header h2{
@@ -50,6 +65,7 @@ a.anchor {
     font-weight: bold;
     font-size: 80px;
     text-align: center;
+    text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4);
 }
 .container{
     width: 90%;
@@ -68,7 +84,8 @@ a.anchor {
     position: static;
     border-radius: 20px;
     padding: 1rem;
-    background: #ea5771;
+    /* background: linear-gradient(#ea5771, #cc0c2f); */
+    /* background-image: linear-gradient(#ea5771); */
     height: auto;
     padding: 1.5rem 1.8rem;
 }
@@ -93,6 +110,34 @@ a.anchor {
     font-size: 40px;
     text-align: right;
 }
+
+#box1 {
+    background: linear-gradient(205deg,#ea5771, #d62646);
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4);
+}
+
+#box2 {
+    background: linear-gradient(205deg,#f68e56, #d65d1c);
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4);
+}
+
+#box3 {
+    background: linear-gradient(205deg,#3cb878, #0f8548);
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4);
+}
+
+#box4 {
+    background: linear-gradient(205deg,#f26c4f, #c8492c);
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4);
+}
+
+
+
+
+
+
+
+
 
 @media (max-width: 780px) {
     .header h1{

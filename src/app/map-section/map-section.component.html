@@ -8,7 +8,7 @@
       <input
         matInput
         (keyup)="applyFilter($event)"
-        placeholder="เช่น จังหวัด, ราคา"
+        placeholder="ระบุจังหวัด"
         #input
       />
     </mat-form-field>
@@ -30,21 +30,18 @@
         </td>
       </ng-container>
 
-      <!-- amountInfected Column -->
+      <!-- newCase Column -->
       <ng-container matColumnDef="newCase">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>จำนวนผู้ติดเชื้อ</th>
-        <td mat-cell *matCellDef="let element" class="district-id">
+        <td
+          mat-cell
+          *matCellDef="let element"
+          class="has_label_on_mobile newCase-label"
+          data-label="newCase"
+        >
           {{ element.newCase }}
         </td>
       </ng-container>
-
-      <!-- Location Column -->
-      <!-- <ng-container matColumnDef="location">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>
-          ตำแหน่งสถานที่
-        </th>
-        <td mat-cell *matCellDef="let element">{{ element.location }}</td>
-      </ng-container> -->
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
@@ -57,7 +54,7 @@
       </tr>
     </table>
     <mat-paginator
-      [pageSizeOptions]="[5, 10]"
+      [pageSizeOptions]="[14]"
       aria-label="Select page of users"
     ></mat-paginator>
 

@@ -1,6 +1,10 @@
 .map-section {
+    // margin: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: 15px;
     width: auto;
-    height: 900px;
+    height: 56rem;
     background-color: rgb(255, 255, 255);
 }
 
@@ -25,8 +29,16 @@ a.anchor {
 
 .search {
   margin: 15px;
+  height: auto;
   // padding-top: 8vh;
 }
+
+// .search mat-paginator {
+//   // margin: 15px;
+//   height: auto;
+//   // background-color: #313131;
+//   // padding-top: 8vh;
+// }
 
 /* ***************************************** */
 

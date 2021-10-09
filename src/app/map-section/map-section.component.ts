@@ -16,7 +16,7 @@ export interface MapData {
   templateUrl: './map-section.component.html',
   styleUrls: ['./map-section.component.scss']
 })
-export class MapSectionComponent implements OnInit, AfterViewInit {
+export class MapSectionComponent implements OnInit {
 
   mapData : MapData[] = [];
 
@@ -29,12 +29,14 @@ export class MapSectionComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.http.get('http://localhost:4200/proxy/covid/api/covid/province').subscribe(data => {
 
-
       Object.entries(data).forEach(
         ([key, value]) => this.mapData.push(value)
       );
 
       this.dataSource = new MatTableDataSource(this.mapData);
+
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
 
     })
   }
@@ -52,11 +54,6 @@ export class MapSectionComponent implements OnInit, AfterViewInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
-
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
   }
 
 }
