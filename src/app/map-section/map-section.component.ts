@@ -16,11 +16,12 @@ export interface MapData {
   templateUrl: './map-section.component.html',
   styleUrls: ['./map-section.component.scss']
 })
-export class MapSectionComponent implements OnInit {
+export class MapSectionComponent implements OnInit, AfterViewInit {
 
   mapData : MapData[] = [];
 
-  // MAP_DATA: MapData[] = mapJSON;
+  MAP_DATA: MapData[] = mapJSON;
+
   dataSource : MatTableDataSource<MapData>;
 
   constructor(private http: HttpClient) { }
