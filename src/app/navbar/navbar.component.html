@@ -1,5 +1,6 @@
-<nav class="navbar navbar-expand-xl sticky-top navbar-dark bg-black">
-  <a class="navbar-brand" href="#">CovidVisualization</a>
+<!-- <nav class="navbar navbar-expand-xl sticky-top navbar-dark bg-black">
+  
+  <a style="left: 30px;position:relative;" class="navbar-brand" href="#">CovidVisualization</a>
   <button
     class="navbar-toggler"
     type="button"
@@ -19,32 +20,112 @@
     id="navbarSupportedContent"
     [ngbCollapse]="isCollapsed"
   >
-  
-    <ul class="nav navbar-nav mb-2 mb-lg-0 mx-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#Infected">ยอดผู้ติดเชื้อ</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#map">จุดเสี่ยงในประเทศไทย</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#chart">กราฟ</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#check-covid">ตรวจโควิด</a>
-      </li>
-    </ul>
+    <div class="centerElement mx-auto order-0">
+      <ul class="nav navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#Infected">ยอดผู้ติดเชื้อ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#map">จุดเสี่ยงในประเทศไทย</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#chart">กราฟ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#check-covid">ตรวจโควิด</a>
+        </li>
+      </ul>
+    </div>
 
-  
-    <ul class="navbar-nav mb-2 mb-lg-0">
-      <li *ngIf=!loggedin() class="nav-item">
-        <a id="loginButton" class="nav-link" routerLink="/login" routerLinkActive="active">เข้าสู่ระบบ</a>
-      </li>
-      <li *ngIf=loggedin() class="nav-item">
-        <a id="logoutButton" class="nav-link" routerLink="/" routerLinkActive="active">Logout</a>
-      </li>
-    </ul>
-    
+    <div class="rightElement ml-auto">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li *ngIf="!loggedin()" class="nav-item">
+          <a
+            id="loginButton"
+            class="nav-link"
+            routerLink="/login"
+            routerLinkActive="active"
+            >เข้าสู่ระบบ</a
+          >
+        </li>       
+      </ul>
 
+      <div *ngIf="loggedin()" class="dropdown mr-5" dropdown>
+        <a href="#" class="dropdown-toggle text-light" dropdownToggle (click)="false">
+          ยินดีต้อนรับ {{user}}
+        </a>
+        <div class="dropdown-menu" *dropdownMenu>
+          <a class="dropdown-item">Dashboard</a>
+          <a class="dropdown-item">ไม่รู้เหมือนกัน</a>
+          <a class="dropdown-item" (click)="onLogout()" routerLink="/" routerLinkActive="active">ออกจากระบบ</a>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</nav> -->
+
+<nav class="navbar navbar-expand-xl sticky-top navbar-dark bg-black">
+  <div class="container-fluid">
+    <a href="#" class="navbar-brand">CovidVisualization</a>
+    <button
+      type="button"
+      class="navbar-toggler"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarCollapse"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="centerElement">
+        <ul class="nav navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#Infected">ยอดผู้ติดเชื้อ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#map">จุดเสี่ยงในประเทศไทย</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#chart">กราฟ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#check-covid">ตรวจโควิด</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navbar-nav ms-auto">
+        <a
+          *ngIf="!loggedin()"
+          id="loginButton"
+          class="nav-link"
+          routerLink="/login"
+          routerLinkActive="active"
+          >เข้าสู่ระบบ</a
+        >
+        <div *ngIf="loggedin()" class="dropdown mr-5" dropdown>
+          <a
+            href="#"
+            class="dropdown-toggle text-light"
+            dropdownToggle
+            (click)="(false)"
+          >
+            ยินดีต้อนรับ {{ user }}
+          </a>
+          <div class="dropdown-menu" *dropdownMenu>
+            <a class="dropdown-item">Dashboard</a>
+            <a class="dropdown-item">ไม่รู้เหมือนกัน</a>
+            <a
+              class="dropdown-item"
+              (click)="onLogout()"
+              routerLink="/"
+              routerLinkActive="active"
+              >ออกจากระบบ</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </nav>

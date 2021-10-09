@@ -1,93 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>CovidProject</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+    />
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 
-<head>
-  <meta charset="utf-8" />
-  <title>CovidProject</title>
-  <base href="/" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
-  <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-    crossorigin="anonymous"></script>
-  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://api.longdo.com/map/?key=fa858017063847c04fbec6271af85509"
+    ></script>
 
-  <script type="text/javascript" src="https://api.longdo.com/map/?key=fa858017063847c04fbec6271af85509"></script>
+    <script>
+      var post;
 
-  <script>
-    var post;
-
-    fetch('http://localhost:4200/proxy/coviD/api/covid/location')
-      .then(function (response) {
-        if (response.ok) {
-          return response.json();
-        } else {
-          return Promise.reject(response);
-        }
-      }).then(function (data) {
-        post = data;
-        return fetch('http://localhost:4200/proxy/covid/api/covid/province');
-      }).then(function (response) {
+      fetch("http://localhost:4200/proxy/coviD/api/covid/location")
+        .then(function (response) {
           if (response.ok) {
             return response.json();
           } else {
             return Promise.reject(response);
           }
-        }).then(function (post2) {
+        })
+        .then(function (data) {
+          post = data;
+          return fetch("http://localhost:4200/proxy/covid/api/covid/province");
+        })
+        .then(function (response) {
+          if (response.ok) {
+            return response.json();
+          } else {
+            return Promise.reject(response);
+          }
+        })
+        .then(function (post2) {
           init(post, post2);
-        }).catch(function (error) {
+        })
+        .catch(function (error) {
           console.warn(error);
         });
 
-    function init(post, post2) {
-      var divmap = new longdo.Map({
-        placeholder: document.getElementById("divmap"),
-      });
-      divmap.Layers.setBase(longdo.Layers.POLITICAL);
-      divmap.location({ lon: 100.4930262, lat: 13.7248936 }, true);
-      divmap.Ui.DPad.visible(false);
-      divmap.Ui.Zoombar.visible(false);
-      divmap.Ui.Geolocation.visible(false);
-      divmap.Ui.Toolbar.visible(false);
-      divmap.Ui.LayerSelector.visible(false);
-      divmap.Ui.Fullscreen.visible(false);
-      divmap.Ui.Scale.visible(false);
-      divmap.zoomRange({ min: 6, max: 9 });
+      function init(post, post2) {
+        var divmap = new longdo.Map({
+          placeholder: document.getElementById("divmap"),
+        });
+        divmap.Layers.setBase(longdo.Layers.POLITICAL);
+        divmap.location({ lon: 100.4930262, lat: 13.7248936 }, true);
+        divmap.Ui.DPad.visible(false);
+        divmap.Ui.Zoombar.visible(false);
+        divmap.Ui.Geolocation.visible(false);
+        divmap.Ui.Toolbar.visible(false);
+        divmap.Ui.LayerSelector.visible(false);
+        divmap.Ui.Fullscreen.visible(false);
+        divmap.Ui.Scale.visible(false);
+        divmap.zoomRange({ min: 6, max: 9 });
 
-      var detail = 'Drag me';
+        var detail = "Drag me";
 
-      for (var i = 0; i < post.length; i++) {
-        var marker = new longdo.Marker({ lon: post[i].longitude, lat: post[i].latitude },
-          {
-            title: post[i].name,
-            icon: {
-              url: 'https://map.longdo.com/mmmap/images/pin_mark.png',
-              offset: { x: 12, y: 45 }
-            },
-            detail: post2[i].newCase,
-            visibleRange: { min: 8, max: 9 },
-            draggable: false,
-            weight: longdo.OverlayWeight.Top,
-          });
-        divmap.Overlays.add(marker);
+        for (var i = 0; i < post.length; i++) {
+          var marker = new longdo.Marker(
+            { lon: post[i].longitude, lat: post[i].latitude },
+            {
+              title: post[i].name,
+              icon: {
+                url: "https://map.longdo.com/mmmap/images/pin_mark.png",
+                offset: { x: 12, y: 45 },
+              },
+              detail: post2[i].newCase,
+              visibleRange: { min: 8, max: 9 },
+              draggable: false,
+              weight: longdo.OverlayWeight.Top,
+            }
+          );
+          divmap.Overlays.add(marker);
+        }
       }
-    }
-  </script>
+    </script>
 
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
-  <app-root></app-root>
-</body>
-
+  <body>
+    <app-root></app-root>
+  </body>
 </html>

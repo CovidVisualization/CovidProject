@@ -5,10 +5,18 @@ ul {
   align-items: start;
   list-style-type: none;
 }
+
 ul li {
-  padding: 1em 2em;
+  padding: 1em 1em;
 }
 
+/* .centerElement {
+  padding-left: 10rem;
+} */
+#loginButton {
+  padding-right: 9rem;
+  color: #ecf0f1;
+}
 .navbar {
   padding: 0;
 }
@@ -20,7 +28,11 @@ ul li {
   margin-left: auto !important;
  }
 
-ul li a {
+.buttonNav {
+  padding-right: 8rem;
+}
+
+.rightElement ul li a{
   position: relative;
   display: block;
   text-decoration: none;
@@ -29,7 +41,17 @@ ul li a {
   padding: 4px 0;
   transition: 0.5s;
 }
-ul li a::after {
+
+.centerElement ul li a {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  color: #ecf0f1;
+  text-transform: uppercase;
+  padding: 4px 0;
+  transition: 0.5s;
+}
+.centerElement ul li a::after {
   position: absolute;
   content: "";
   width: 100%;
@@ -41,10 +63,10 @@ ul li a::after {
   transform: scaleX(0);
   transform-origin: right;
 }
-ul li a:hover {
+.centerElement ul li a:hover {
   color: #ecf0f1;
 }
-ul li a:hover::after {
+.centerElement ul li a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }
