@@ -91,38 +91,41 @@
             <a class="nav-link" href="#chart">กราฟ</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#check-covid">ตรวจโควิด</a>
+            <a class="nav-link" href="#check-covid" table-index="-1">ตรวจโควิด</a>
           </li>
         </ul>
       </div>
-      <div class="navbar-nav ms-auto">
-        <a
-          *ngIf="!loggedin()"
-          id="loginButton"
-          class="nav-link"
-          routerLink="/login"
-          routerLinkActive="active"
-          >เข้าสู่ระบบ</a
-        >
-        <div *ngIf="loggedin()" class="dropdown mr-5" dropdown>
+
+      
+        <div class="navbar-nav ms-auto">
+          <div class="rightElement">
           <a
-            href="#"
-            class="dropdown-toggle text-light"
-            dropdownToggle
-            (click)="(false)"
+            *ngIf="!loggedin()"
+            id="loginButton"
+            class="nav-link"
+            routerLink="/login"
+            routerLinkActive="active"
+            >เข้าสู่ระบบ</a
           >
-            ยินดีต้อนรับ {{ user }}
-          </a>
-          <div class="dropdown-menu" *dropdownMenu>
-            <a class="dropdown-item">Dashboard</a>
-            <a class="dropdown-item">ไม่รู้เหมือนกัน</a>
+          <div *ngIf="loggedin()" class="dropdown mr-5" dropdown>
             <a
-              class="dropdown-item"
-              (click)="onLogout()"
-              routerLink="/"
-              routerLinkActive="active"
-              >ออกจากระบบ</a
+              href="#"
+              class="dropdown-toggle text-light"
+              dropdownToggle
+              (click)="(false)"
             >
+              ยินดีต้อนรับ {{ user }}
+            </a>
+            <div class="dropdown-menu" *dropdownMenu>
+              <a class="dropdown-item">Dashboard</a>
+              <a class="dropdown-item">ไม่รู้เหมือนกัน</a>
+              <a
+                class="dropdown-item"
+                (click)="onLogout()"
+                routerLink="/"
+                >ออกจากระบบ</a
+              >
+            </div>
           </div>
         </div>
       </div>

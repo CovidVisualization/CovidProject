@@ -17,6 +17,15 @@ ul li {
   padding-right: 9rem;
   color: #ecf0f1;
 }
+@media screen and (max-width: 1676px) {
+  #loginButton {
+    padding-right: 4rem;
+    color: #ecf0f1;
+  }
+
+
+  
+}
 .navbar {
   padding: 0;
 }
@@ -32,15 +41,13 @@ ul li {
   padding-right: 8rem;
 }
 
-.rightElement ul li a{
-  position: relative;
-  display: block;
-  text-decoration: none;
-  color: #ecf0f1;
-  text-transform: uppercase;
-  padding: 4px 0;
-  transition: 0.5s;
+.rightElement a{
+  color: black;
+  padding: 1em 1em;
+
 }
+
+
 
 .centerElement ul li a {
   position: relative;
@@ -69,4 +76,10 @@ ul li {
 .centerElement ul li a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
+}
+
+/** Collape Navigaiton Bar **/
+@media screen and (max-width: 1199px) {
+
+
 }
