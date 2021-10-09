@@ -30,6 +30,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { FormsModule } from '@angular/forms';
 
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+
 const routes: Routes = [
   { path: "", component: ContentComponent },
   { path: "login", component: LoginComponent }
@@ -60,7 +62,8 @@ const routes: Routes = [
     HttpClientModule,
     MatIconModule,
     RouterModule.forRoot(routes),
-    FormsModule
+    FormsModule,
+    BsDropdownModule.forRoot()
 
   ],
 
