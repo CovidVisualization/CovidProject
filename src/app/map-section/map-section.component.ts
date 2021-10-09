@@ -18,39 +18,32 @@ export interface MapData {
 })
 export class MapSectionComponent implements OnInit {
 
-  // MAP_DATA: MapData[] = [];
+  mapData : MapData[] = [];
 
-  MAP_DATA: MapData[] = mapJSON;
+  // MAP_DATA: MapData[] = mapJSON;
+  dataSource : MatTableDataSource<MapData>;
 
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     this.http.get('http://localhost:4200/proxy/covid/api/covid/province').subscribe(data => {
 
-      let data_map: MapData[] = [];
 
       Object.entries(data).forEach(
-        ([key, value]) => data_map.push(value)
+        ([key, value]) => this.mapData.push(value)
       );
 
-      console.log(data_map);
-      // this.MAP_DATA = data_map;
-
-      this.getData(data_map);
+      this.dataSource = new MatTableDataSource(this.mapData);
 
     })
   }
 
   displayedColumns: string[] = [
     'province',
-    'newCase',
+    'newCase'
   ];
 
-  getData(data_map: MapData[]) {
-    this.MAP_DATA = data_map;
-  }
-
-  dataSource = new MatTableDataSource(this.MAP_DATA); 
+  // dataSource = new MatTableDataSource(this.MAP_DATA);
 
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
