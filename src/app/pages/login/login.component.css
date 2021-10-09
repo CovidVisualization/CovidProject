@@ -14,12 +14,15 @@
 .selectLoginRegister button {
     margin: 10px;
     font-size: 30px;
-    transition: 0.5s;    
+    transition: 0.5s;
+    border: none;
+    background-color: white;
  }
 
 .selectLoginRegister button:hover {
     margin: 10px;
-    font-size: 50px;    
+    font-size: 50px;
+    border: none;
 }
 
 .container {
@@ -54,3 +57,64 @@
 .from-control {
     width: 60%;
 }
+
+.loginBtn {
+    margin-top: 2%;
+    background: rgb(65, 65, 65);
+    color: white;
+    border-radius: 25px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 rgba(82, 82, 82, 0);
+    transition: 0.5s;
+    border: 1px solid black;
+}
+
+.loginBtn:enabled:hover {
+    box-shadow: 10px 10px 8px 1px #888888;
+    background: white;
+    color: black;
+    transition: 0.5s;
+}
+
+.loginBtn:disabled, button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: default;
+}
+
+.registerBtn {
+    margin-top: 2%;
+    background: rgb(65, 65, 65);
+    color: white;
+    border-radius: 25px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 rgba(82, 82, 82, 0);
+    transition: 0.5s;
+    border: 1px solid black;
+}
+
+.registerBtn:enabled:hover {
+    box-shadow: 10px 10px 8px 1px #888888;
+    background: white;
+    color: black;
+    transition: 0.5s;
+}
+
+.registerBtn:disabled, button[disabled]{
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    cursor: default;
+  }
+  

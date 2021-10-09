@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
   displayRegister = false;
 
   province_th : String[] = [
-    'กรุงเทพฯ',
+    'กรุงเทพมหานคร',
     'กระบี่',
     'กาญจนบุรี',
     'กาฬสินธุ์',

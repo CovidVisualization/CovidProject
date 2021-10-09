@@ -2,10 +2,10 @@
     <div class="container">
         <div class="selectLoginRegister">
 
-            <button class="btn" type="button" (click)="LoginButtonClick()">
+            <button class="selectBtn" type="button" (click)="LoginButtonClick()">
                 Login
             </button>
-            <button class="btn" type="button" (click)="RegisterButtonClick()">
+            <button class="selectBtn" type="button" (click)="RegisterButtonClick()">
                 Register
             </button>
         </div>
@@ -34,7 +34,7 @@
                         </div>
 
                         <div class="form-group col-12">
-                            <button type="submit" class="btn btn-success" [disabled]="loginForm.invalid">Login</button>
+                            <button type="submit" class="loginBtn" [disabled]="loginForm.invalid">Login</button>
                         </div>
                     </form>
                 </div>
@@ -206,7 +206,7 @@
 
                         <!-- Button -->
                         <div class="form-group col-12">
-                            <button type="submit" class="btn btn-primary"
+                            <button type="submit" class="registerBtn"
                                 [disabled]="registerForm.invalid">Register</button>
                         </div>
                     </form>
