@@ -57,7 +57,7 @@ th {
 }
 
 th {
-  font-size: 2vh;
+  font-size: 1.25rem;
   font-weight: bold;
 }
 
@@ -82,7 +82,7 @@ th {
 
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 850px) {
   .header h2 {
     color: white;
     font-size: 40px;
