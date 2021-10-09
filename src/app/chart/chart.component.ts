@@ -35,7 +35,7 @@ export class ChartComponent implements OnInit {
       let date_newCase: string[] = [];
       let data_healed: string[] = [];
 
-      console.log(date_newCase);
+      // console.log(date_newCase);
 
       Object.entries(data).forEach(
         ([key, value]) => date_lebels.push(value["date"])

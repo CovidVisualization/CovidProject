@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   isCollapsed = false;
+  isloggin = false;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  loggedin() {
+    return this.isloggin;
   }
   
 
