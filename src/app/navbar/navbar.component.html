@@ -19,8 +19,7 @@
     id="navbarSupportedContent"
     [ngbCollapse]="isCollapsed"
   >
-  
-    <ul class="nav navbar-nav mb-2 mb-lg-0 mx-auto">
+    <ul id="gg" class="nav navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
       <li class="nav-item">
         <a class="nav-link" href="#Infected">ยอดผู้ติดเชื้อ</a>
       </li>
@@ -33,18 +32,9 @@
       <li class="nav-item">
         <a class="nav-link" href="#check-covid">ตรวจโควิด</a>
       </li>
-    </ul>
-
-  
-    <ul class="navbar-nav mb-2 mb-lg-0">
-      <li *ngIf=!loggedin() class="nav-item">
-        <a id="loginButton" class="nav-link" routerLink="/login" routerLinkActive="active">เข้าสู่ระบบ</a>
-      </li>
-      <li *ngIf=loggedin() class="nav-item">
-        <a id="logoutButton" class="nav-link" routerLink="/" routerLinkActive="active">Logout</a>
+      <li class="nav-item">
+        <a id="loginButton" class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
       </li>
     </ul>
-    
-
   </div>
 </nav>
