@@ -17,7 +17,7 @@ a.anchor {
 
 .grid-container {
     display: grid;
-    grid-template-columns: 20% auto;
+    grid-template-columns: 22% auto;
     /* grid-gap: 10px; */
     background-color: #535353;
     /* padding: 10px; */
@@ -47,6 +47,12 @@ a.anchor {
 .header {
   margin: 7vh;
   padding-top: 8vh;
+}
+
+.search h1 {
+  padding-top: 10px;
+  color: white;
+  font-size: 25px;
 }
 
 .header h2 {
