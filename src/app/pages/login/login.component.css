@@ -1,16 +1,27 @@
 html, body {
     background: rgb(24,26,27);
     /* height: 95.3vh; */
-    height: auto;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-repeat: repeat;
 }
 
 .container{
     width: 100%;
 }
 
+.bigContainer{
+    width: 100%;
+    text-align: center;
+    background: rgb(24,26,27);
+}
+
 .box h1 {
     padding: 5%;
-
 }
 
 .selectLoginRegister {
@@ -136,7 +147,7 @@ html, body {
     color: white;
     margin-top: 1%;
     border-radius: 5px;
-    padding: 2px;
+    /* padding: 2px; */
 }
 
 input {
@@ -152,9 +163,9 @@ input {
     color: white;
 }
 
-@media (max-height: 90vh) {
+/* @media (min-height: 102vh) {
     html, body {
         background: rgb(0, 153, 230);
-        height: 93.5;
+        height: 95.3vh;
     }
-}
+} */
