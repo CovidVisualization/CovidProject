@@ -75,7 +75,7 @@
         for (var i = 0; i < post.length; i++) {
           for (var j = 0; j < post.length; j++) {
             if (post[i].name == post2[j].province){
-              if (post2[j].newCase < 20){
+              if (post2[j].newCase < 30){
                 var marker = new longdo.Marker({ lon: post[i].longitude, lat: post[i].latitude },
                 {
                 title: post[i].name,
