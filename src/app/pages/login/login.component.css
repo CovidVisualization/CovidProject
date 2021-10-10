@@ -1,3 +1,9 @@
+html, body {
+    background: rgb(24,26,27);
+    /* height: 95.3vh; */
+    height: auto;
+}
+
 .container{
     width: 100%;
 }
@@ -16,7 +22,8 @@
     font-size: 30px;
     transition: 0.5s;
     border: none;
-    background-color: white;
+    background-color: rgb(24,26,27);
+    color: white;
  }
 
 .selectLoginRegister button:hover {
@@ -35,9 +42,11 @@
 .box {
     width: 100%;
     max-width: 650%;
-    border: 1px solid black;
+    border: 1px solid rgb(156, 156, 156);
     border-radius: 25px;
-    background-color: #eceaea;
+    background-color: rgb(35,38,40);
+    /* #eceaea */
+    color: white;
     margin: 5rem;
 }
 
@@ -69,13 +78,13 @@
     padding-bottom: 20px;
     cursor: pointer;
     overflow: hidden;
-    box-shadow: 0 0 0 0 rgba(82, 82, 82, 0);
+    box-shadow: 0 0 0 0 rgba(31, 31, 31, 0);
     transition: 0.5s;
-    border: 1px solid black;
+    border: 1px solid rgb(168, 168, 168);
 }
 
 .loginBtn:enabled:hover {
-    box-shadow: 10px 10px 8px 1px #888888;
+    box-shadow: 10px 10px 8px 1px #1a1a1a;
     background: white;
     color: black;
     transition: 0.5s;
@@ -101,11 +110,11 @@
     overflow: hidden;
     box-shadow: 0 0 0 0 rgba(82, 82, 82, 0);
     transition: 0.5s;
-    border: 1px solid black;
+    border: 1px solid rgb(168, 168, 168);
 }
 
 .registerBtn:enabled:hover {
-    box-shadow: 10px 10px 8px 1px #888888;
+    box-shadow: 10px 10px 8px 1px #1a1a1a;
     background: white;
     color: black;
     transition: 0.5s;
@@ -118,11 +127,34 @@
     cursor: default;
   }
 
-/* input {
+.alert-danger {
+    background:rgb(107, 22, 22);
+    width: 60%;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    color: white;
+    margin-top: 1%;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+input {
     background: gray;
     border: 1px solid black;
     border-radius: 5px;
     padding: 8px;
     color: white;
-} */
-  
+
+}
+
+::-webkit-input-placeholder {
+    color: white;
+}
+
+@media (max-height: 90vh) {
+    html, body {
+        background: rgb(0, 153, 230);
+        height: 93.5;
+    }
+}
