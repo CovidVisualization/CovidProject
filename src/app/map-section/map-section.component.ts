@@ -27,7 +27,7 @@ export class MapSectionComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get('http://localhost:4200/proxy/covid/api/covid/province').subscribe(data => {
+    this.http.get('http://localhost:4200/proxy/api/covid/province').subscribe(data => {
 
       Object.entries(data).forEach(
         ([key, value]) => this.mapData.push(value)

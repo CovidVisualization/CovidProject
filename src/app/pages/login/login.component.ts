@@ -1,5 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-login',
@@ -91,7 +94,17 @@ export class LoginComponent implements OnInit {
     'อุบลราชธานี',
   ];
 
-  constructor() {
+  constructor(
+    private loginServ: LoginService,
+    private router: Router) {
+    this.loginServ.onRegisterComplete.subscribe(data => {
+      if (data) {
+        console.log('Register complete Yeah')
+        this.router.navigate(['/'])
+      } else {
+        console.error('Register fail')
+      }
+    })
   }
 
   ngOnInit(): void {
@@ -154,8 +167,6 @@ export class LoginComponent implements OnInit {
 
   onRegister(registerFrom: NgForm): void {
     const registerToken = registerFrom.value;
-
-    const jsonObj = [];
     const item : any= {}
     item.userEmail = registerToken.userEmail
     item.userName = registerToken.userName
@@ -163,8 +174,13 @@ export class LoginComponent implements OnInit {
     item.password = registerToken.userPassword
     item.province = registerToken.province
 
-    jsonObj.push(item);
-    console.log(jsonObj);
 
+
+    this.loginServ.register(item)
+    
   }
+
+ 
+
+    
 }

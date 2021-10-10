@@ -18,7 +18,7 @@ export class InfectedSectionComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get<any>('http://localhost:4200/proxy/covid/api/covid/totalcovid').subscribe(data => {
+    this.http.get<any>('http://localhost:4200/proxy/api/covid/totalcovid').subscribe(data => {
       
       var intTotal: number = +data[0].totalnew;
       if (intTotal.toLocaleString() != "") {
