@@ -50,6 +50,26 @@ a.anchor {
 table {
   width: 100%;
   font-family: Prompt;
+  border-collapse: collapse;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  background-color: white;
+}
+
+.mat-table {
+  overflow:hidden !important;
+}
+
+.mat-paginator {
+  font-family: Prompt;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+
+}
+
+table tr:last-child td /*To remove the last border*/
+{
+  border-bottom:0 solid
 }
 
 td,
@@ -124,7 +144,7 @@ th {
       box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2),
         0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
       background-color: #fff;
-      border-radius: 7px;
+      border-radius: 1rem;
       + .mat-row {
         margin-top: 24px;
       }
@@ -169,7 +189,12 @@ th {
 
   .mat-paginator {
     margin-top: 24px;
+    font-family: Prompt;
+    border-radius: 1em;
+
   }
+
+  
 }
 
 @media (max-width: 450px) {

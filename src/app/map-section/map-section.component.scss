@@ -97,10 +97,32 @@ a.anchor {
   color: black;
 }
 
+
 table {
   width: 100%;
   font-family: Prompt;
+  border-collapse: collapse;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  background-color: white;
 }
+
+.mat-table {
+  overflow:hidden !important;
+}
+
+.mat-paginator {
+  font-family: Prompt;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+
+}
+
+table tr:last-child td /*To remove the last border*/
+{
+  border-bottom:0 solid
+}
+
 
 td,
 th {

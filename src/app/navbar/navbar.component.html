@@ -1,71 +1,3 @@
-<!-- <nav class="navbar navbar-expand-xl sticky-top navbar-dark bg-black">
-  
-  <a style="left: 30px;position:relative;" class="navbar-brand" href="#">CovidVisualization</a>
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-    data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-    (click)="isCollapsed = !isCollapsed"
-    [attr.aria-expanded]="!isCollapsed"
-  >
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div
-    class="collapse navbar-collapse"
-    id="navbarSupportedContent"
-    [ngbCollapse]="isCollapsed"
-  >
-    <div class="centerElement mx-auto order-0">
-      <ul class="nav navbar-nav mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="#Infected">ยอดผู้ติดเชื้อ</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#map">จุดเสี่ยงในประเทศไทย</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#chart">กราฟ</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#check-covid">ตรวจโควิด</a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="rightElement ml-auto">
-      <ul class="navbar-nav mb-2 mb-lg-0">
-        <li *ngIf="!loggedin()" class="nav-item">
-          <a
-            id="loginButton"
-            class="nav-link"
-            routerLink="/login"
-            routerLinkActive="active"
-            >เข้าสู่ระบบ</a
-          >
-        </li>       
-      </ul>
-
-      <div *ngIf="loggedin()" class="dropdown mr-5" dropdown>
-        <a href="#" class="dropdown-toggle text-light" dropdownToggle (click)="false">
-          ยินดีต้อนรับ {{user}}
-        </a>
-        <div class="dropdown-menu" *dropdownMenu>
-          <a class="dropdown-item">Dashboard</a>
-          <a class="dropdown-item">ไม่รู้เหมือนกัน</a>
-          <a class="dropdown-item" (click)="onLogout()" routerLink="/" routerLinkActive="active">ออกจากระบบ</a>
-        </div>
-      </div>
-    </div>
-
-
-  </div>
-</nav> -->
-
 <nav class="navbar navbar-expand-xl sticky-top navbar-dark bg-black">
   <div class="container-fluid">
     <a href="#" class="navbar-brand">CovidVisualization</a>
@@ -91,7 +23,7 @@
             <a class="nav-link" href="#chart">กราฟ</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#check-covid" table-index="-1">ตรวจโควิด</a>
+            <a class="nav-link" href="#check-covid" tabindex="-1">ตรวจโควิด</a>
           </li>
         </ul>
       </div>
@@ -109,6 +41,7 @@
           >
           <div *ngIf="loggedin()" class="dropdown mr-5" dropdown>
             <a
+              id="dropdownB"
               href="#"
               class="dropdown-toggle text-light"
               dropdownToggle
@@ -116,10 +49,11 @@
             >
               ยินดีต้อนรับ {{ user }}
             </a>
-            <div class="dropdown-menu" *dropdownMenu>
+            <div class="dropdown-menu" *dropdownMenu aria-labelledby="button-autoclose1">
               <a class="dropdown-item">Dashboard</a>
               <a class="dropdown-item">ไม่รู้เหมือนกัน</a>
               <a
+                id="logoutButton"
                 class="dropdown-item"
                 (click)="onLogout()"
                 routerLink="/"

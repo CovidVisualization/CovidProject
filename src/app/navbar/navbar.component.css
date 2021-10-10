@@ -17,14 +17,15 @@ ul li {
   padding-right: 9rem;
   color: #ecf0f1;
 }
+
+#dropdownB {}
+
 @media screen and (max-width: 1676px) {
   #loginButton {
     padding-right: 4rem;
     color: #ecf0f1;
   }
 
-
-  
 }
 .navbar {
   padding: 0;
@@ -78,8 +79,15 @@ ul li {
   transform-origin: left;
 }
 
+#logoutButton {
+  color: red;
+}
+
 /** Collape Navigaiton Bar **/
 @media screen and (max-width: 1199px) {
-
+  .rightElement a{
+    padding: 0rem 2rem;
+  
+  }
 
 }
