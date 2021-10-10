@@ -73,56 +73,56 @@
         var detail = "Drag me";
 
         for (var i = 0; i < post.length; i++) {
-          if(post2[i].newCase < 20) {
-            var marker = new longdo.Marker(
-              { lon: post[i].longitude, lat: post[i].latitude },
-              {
+          for (var j = 0; j < post.length; j++) {
+            if (post[i].name == post2[j].province){
+              if (post2[j].newCase < 20){
+                var marker = new longdo.Marker({ lon: post[i].longitude, lat: post[i].latitude },
+                {
                 title: post[i].name,
                 icon: {
                   url: "https://raw.githubusercontent.com/MetamediaTechnology/markercluster-longdo-map/master/dist/m1.png",
                   offset: { x: 26.5, y: 26 },
                 },
-                detail: "ผู้ป่วยใหม่ " + post2[i].newCase + " คน",
+                detail: "ผู้ป่วยใหม่ " + post2[j].newCase + " คน",
                 visibleRange: { min: 8, max: 9 },
                 draggable: false,
                 weight: longdo.OverlayWeight.Top,
+                });
+                divmap.Overlays.add(marker);
               }
-            );
-            divmap.Overlays.add(marker);
-          }
-          else if(post2[i].newCase < 200) {
-            var marker = new longdo.Marker(
-              { lon: post[i].longitude, lat: post[i].latitude },
-              {
+
+              else if (post2[j].newCase < 200){
+                var marker = new longdo.Marker({ lon: post[i].longitude, lat: post[i].latitude },
+                {
                 title: post[i].name,
                 icon: {
                   url: "https://raw.githubusercontent.com/MetamediaTechnology/markercluster-longdo-map/master/dist/m2.png",
                   offset: { x: 28, y: 27.5 },
                 },
-                detail: "ผู้ป่วยใหม่ " + post2[i].newCase + " คน",
+                detail: "ผู้ป่วยใหม่ " + post2[j].newCase + " คน",
                 visibleRange: { min: 8, max: 9 },
                 draggable: false,
                 weight: longdo.OverlayWeight.Top,
+                });
+                divmap.Overlays.add(marker);
               }
-            );
-            divmap.Overlays.add(marker);
-          }
-          else {
-            var marker = new longdo.Marker(
-              { lon: post[i].longitude, lat: post[i].latitude },
-              {
+
+              else {
+                var marker = new longdo.Marker({ lon: post[i].longitude, lat: post[i].latitude },
+                {
                 title: post[i].name,
                 icon: {
                   url: "https://raw.githubusercontent.com/MetamediaTechnology/markercluster-longdo-map/master/dist/m3.png",
                   offset: { x: 33, y: 32.5 },
                 },
-                detail: "ผู้ป่วยใหม่ " + post2[i].newCase + " คน",
+                detail: "ผู้ป่วยใหม่ " + post2[j].newCase + " คน",
                 visibleRange: { min: 8, max: 9 },
                 draggable: false,
                 weight: longdo.OverlayWeight.Top,
+                });
+                divmap.Overlays.add(marker);
               }
-            );
-            divmap.Overlays.add(marker);
+            } // if check province
           }
         }
       }
