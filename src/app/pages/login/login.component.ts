@@ -1,113 +1,130 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
-import { LoginService } from './login.service';
+import { HttpClient } from "@angular/common/http";
+import { Component, OnInit } from "@angular/core";
+import { NgForm } from "@angular/forms";
+import { Router } from "@angular/router";
+import { LoginService } from "./login.service";
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: "app-login",
+  templateUrl: "./login.component.html",
+  styleUrls: ["./login.component.css"]
 })
+
 export class LoginComponent implements OnInit {
 
   displayLogin = true;
   displayRegister = false;
 
-  province_th : String[] = [
-    'กรุงเทพมหานคร',
-    'กระบี่',
-    'กาญจนบุรี',
-    'กาฬสินธุ์',
-    'กำแพงเพชร',
-    'ขอนแก่น',
-    'จันทบุรี',
-    'ฉะเชิงเทรา',
-    'ชลบุรี',
-    'ชัยนาท',
-    'ชัยภูมิ',
-    'ชุมพร',
-    'เชียงใหม่',
-    'เชียงราย',
-    'ตรัง',
-    'ตราด',
-    'ตาก',
-    'นครนายก',
-    'นครปฐม',
-    'นครพนม',
-    'นครราชสีมา',
-    'นครศรีธรรมราช',
-    'นครสวรรค์',
-    'นนทบุรี',
-    'นราธิวาส',
-    'น่าน',
-    'บึงกาฬ',
-    'บุรีรัมย์',
-    'ปทุมธานี',
-    'ประจวบคีรีขันธ์',
-    'ปราจีนบุรี',
-    'ปัตตานี',
-    'พระนครศรีอยุธยา',
-    'พะเยา',
-    'พังงา',
-    'พัทลุง',
-    'พิจิตร',
-    'พิษณุโลก',
-    'เพชรบุรี',
-    'เพชรบูรณ์',
-    'แพร่',
-    'ภูเก็ต',
-    'มหาสารคาม',
-    'มุกดาหาร',
-    'แม่ฮ่องสอน',
-    'ยโสธร',
-    'ยะลา',
-    'ร้อยเอ็ด',
-    'ระนอง',
-    'ระยอง',
-    'ราชบุรี',
-    'ลพบุรี',
-    'ลำปาง',
-    'ลำพูน',
-    'เลย',
-    'ศรีสะเกษ',
-    'สกลนคร',
-    'สงขลา',
-    'สตูล',
-    'สมุทรปราการ',
-    'สมุทรสงคราม',
-    'สมุทรสาคร',
-    'สระแก้ว',
-    'สระบุรี',
-    'สิงห์บุรี',
-    'สุโขทัย',
-    'สุพรรณบุรี',
-    'สุราษฎร์ธานี',
-    'สุรินทร์',
-    'หนองคาย',
-    'หนองบัวลำภู',
-    'อ่างทอง',
-    'อำนาจเจริญ',
-    'อุดรธานี',
-    'อุตรดิตถ์',
-    'อุทัยธานี',
-    'อุบลราชธานี',
+  province_th : string[] = [
+    "กรุงเทพมหานคร",
+    "กระบี่",
+    "กาญจนบุรี",
+    "กาฬสินธุ์",
+    "กำแพงเพชร",
+    "ขอนแก่น",
+    "จันทบุรี",
+    "ฉะเชิงเทรา",
+    "ชลบุรี",
+    "ชัยนาท",
+    "ชัยภูมิ",
+    "ชุมพร",
+    "เชียงใหม่",
+    "เชียงราย",
+    "ตรัง",
+    "ตราด",
+    "ตาก",
+    "นครนายก",
+    "นครปฐม",
+    "นครพนม",
+    "นครราชสีมา",
+    "นครศรีธรรมราช",
+    "นครสวรรค์",
+    "นนทบุรี",
+    "นราธิวาส",
+    "น่าน",
+    "บึงกาฬ",
+    "บุรีรัมย์",
+    "ปทุมธานี",
+    "ประจวบคีรีขันธ์",
+    "ปราจีนบุรี",
+    "ปัตตานี",
+    "พระนครศรีอยุธยา",
+    "พะเยา",
+    "พังงา",
+    "พัทลุง",
+    "พิจิตร",
+    "พิษณุโลก",
+    "เพชรบุรี",
+    "เพชรบูรณ์",
+    "แพร่",
+    "ภูเก็ต",
+    "มหาสารคาม",
+    "มุกดาหาร",
+    "แม่ฮ่องสอน",
+    "ยโสธร",
+    "ยะลา",
+    "ร้อยเอ็ด",
+    "ระนอง",
+    "ระยอง",
+    "ราชบุรี",
+    "ลพบุรี",
+    "ลำปาง",
+    "ลำพูน",
+    "เลย",
+    "ศรีสะเกษ",
+    "สกลนคร",
+    "สงขลา",
+    "สตูล",
+    "สมุทรปราการ",
+    "สมุทรสงคราม",
+    "สมุทรสาคร",
+    "สระแก้ว",
+    "สระบุรี",
+    "สิงห์บุรี",
+    "สุโขทัย",
+    "สุพรรณบุรี",
+    "สุราษฎร์ธานี",
+    "สุรินทร์",
+    "หนองคาย",
+    "หนองบัวลำภู",
+    "อ่างทอง",
+    "อำนาจเจริญ",
+    "อุดรธานี",
+    "อุตรดิตถ์",
+    "อุทัยธานี",
+    "อุบลราชธานี",
   ];
+
+
+  
 
   constructor(
     private loginServ: LoginService,
     private router: Router) {
     this.loginServ.onRegisterComplete.subscribe(data => {
       if (data) {
-        console.log('Register complete Yeah')
-        this.router.navigate(['/'])
+        console.log("Register complete Yeah")
+        this.router.navigate(["/"])
       } else {
-        console.error('Register fail')
+        console.error("Register fail")
       }
     })
   }
 
   ngOnInit(): void {
+    // let list = document.getElementById('datalistOptions'); 
+
+    // this.province_th.forEach(item => {
+    //   let option = document.createElement('option');
+    //   option.value = item;
+
+    //   // if (list !== null){
+    //   //   alert("fuck");
+    //   //   list.appendChild(option);
+    //   // }
+    //   list!.appendChild(option);
+    // });
+
   }
 
   log (x: any) {
@@ -130,7 +147,7 @@ export class LoginComponent implements OnInit {
       return false;
     }
     try {
-      registerForm.form.controls['province'].setErrors({'invalid': true});
+      registerForm.form.controls["province"].setErrors({"invalid": true});
     } catch { }
     return true;
   }
@@ -145,14 +162,6 @@ export class LoginComponent implements OnInit {
     this.displayRegister = true;
   }
 
-  wantToLogin() {
-    return this.displayLogin
-  }
-
-  wantToRegister() {
-    return this.displayRegister
-  }
-
   onLogin(loginFrom: NgForm): void {
     const loginToken = loginFrom.value;
 
@@ -163,6 +172,11 @@ export class LoginComponent implements OnInit {
 
     jsonObj.push(item);
     console.log(jsonObj);
+    if (true){
+      //link
+    } else {
+      //display error
+    }
   }
 
   onRegister(registerFrom: NgForm): void {
@@ -174,13 +188,11 @@ export class LoginComponent implements OnInit {
     item.password = registerToken.userPassword
     item.province = registerToken.province
 
-
-
     this.loginServ.register(item)
-    
   }
 
  
 
     
 }
+

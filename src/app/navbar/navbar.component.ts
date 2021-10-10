@@ -8,7 +8,7 @@ import { BsDropdownConfig } from 'ngx-bootstrap/dropdown';
 })
 export class NavbarComponent implements OnInit {
   isCollapsed = false;
-  isloggin = true;
+  isloggin = false;
   user = "Mansea";
   constructor() { }
 
