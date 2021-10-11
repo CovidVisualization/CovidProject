@@ -100,8 +100,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private loginServ: LoginService,
-    private router: Router,
-    private http: HttpClient) {
+    private router: Router,) {
     this.loginServ.onRegisterComplete.subscribe(data => {
       if (data) {
         console.log("Register complete Yeah")
@@ -121,12 +120,6 @@ export class LoginComponent implements OnInit {
         console.error("Login fail")
       }
     })
-
-    this.http.get('http://localhost:4200/proxy/api/covid/login').subscribe(data => {
-      console.log(data);
-    })
-
-
 
   }
 
@@ -190,6 +183,7 @@ export class LoginComponent implements OnInit {
     item.userEmail = loginToken.userEmail;
     item.userPassword = loginToken.password;
 
+    console.log(item)
     this.loginServ.login(item)
 
     // jsonObj.push(item);

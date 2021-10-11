@@ -14,14 +14,20 @@ export class LoginService {
 
   register(item: any) {
     this.http.post('http://localhost:4200/proxy/api/covid/register', item).subscribe(
-      res => this.onRegisterComplete.emit(true), 
+      res => {
+      this.onRegisterComplete.emit(true)
+      // console.log(res);
+      }, 
       err => this.onRegisterComplete.emit(false)
     )
   }
 
   login(item: any) {
     this.http.post('http://localhost:4200/proxy/api/covid/login', item).subscribe(
-      res => this.onLoginComplete.emit(true), 
+      res => {
+        this.onLoginComplete.emit(true)
+        console.log(res);
+        }, 
       err => this.onLoginComplete.emit(false)
     )
   }
