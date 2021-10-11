@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BsDropdownConfig } from 'ngx-bootstrap/dropdown';
+import { LoginService } from '../pages/login/login.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,18 +11,18 @@ export class NavbarComponent implements OnInit {
   isCollapsed = false;
   isloggin = false;
   user = "Mansea";
-  constructor() { }
+
+  loginObj : any;
+
+  constructor(private loginServ: LoginService) { 
+    this.loginObj = this.loginServ.loginObj;
+  }
 
   ngOnInit(): void {
   }
 
-  loggedin() {
-    return this.isloggin;
-  }
-
   onLogout() {
-
-    return this.isloggin = false
+    return false;
   }
   
 

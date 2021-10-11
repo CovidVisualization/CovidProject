@@ -32,14 +32,13 @@
         <div class="navbar-nav ms-auto">
           <div class="rightElement">
           <a
-            *ngIf="!loggedin()"
+            *ngIf="!loginObj"
             id="loginButton"
             class="nav-link"
             routerLink="/login"
             routerLinkActive="active"
-            >เข้าสู่ระบบ</a
-          >
-          <div *ngIf="loggedin()" class="dropdown mr-5" dropdown>
+            >เข้าสู่ระบบ</a>
+          <div *ngIf="loginObj" class="dropdown mr-5" dropdown>
             <a
               id="dropdownB"
               href="#"
