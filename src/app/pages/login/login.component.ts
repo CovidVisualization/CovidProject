@@ -96,7 +96,6 @@ export class LoginComponent implements OnInit {
   ];
 
 
-  
 
   constructor(
     private loginServ: LoginService,
@@ -104,20 +103,22 @@ export class LoginComponent implements OnInit {
     this.loginServ.onRegisterComplete.subscribe(data => {
       if (data) {
         console.log("Register complete Yeah")
-        // this.router.navigate(["/"])
+        this.displayLogin = true;
+        this.displayRegister = false;
       } else {
         console.error("Register fail")
       }
     })
 
-    this.loginServ.onLoginComplete.subscribe(data => {
-      console.log(data);
+    this.loginServ.onLoginComplete.subscribe(async data => {
 
       if (data) {
         console.log("Login complete Yeah")
-        this.router.navigate(["/"])
+        alert("yes");
+        // this.router.navigate(["/"])
       } else {
         console.error("Login fail")
+        alert("Login Failed.");
       }
     })
 
@@ -178,26 +179,16 @@ export class LoginComponent implements OnInit {
   onLogin(loginFrom: NgForm): void {
     const loginToken = loginFrom.value;
 
-    // const jsonObj = [];
     let item : any = {}
     item.userEmail = loginToken.userEmail;
     item.userPassword = loginToken.password;
 
-    console.log(item)
     this.loginServ.login(item)
-
-    // jsonObj.push(item);
-    // console.log(jsonObj);
-    // if (true){
-    //   //link
-    // } else {
-    //   //display error
-    // }
   }
 
   onRegister(registerFrom: NgForm): void {
     const registerToken = registerFrom.value;
-    const item : any= {}
+    let item : any= {}
     item.userEmail = registerToken.userEmail
     item.userName = registerToken.userName
     item.userSurname = registerToken.userSurname
@@ -207,8 +198,5 @@ export class LoginComponent implements OnInit {
     this.loginServ.register(item)
   }
 
- 
-
-    
 }
 
