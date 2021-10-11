@@ -32,6 +32,7 @@ import { FormsModule } from '@angular/forms';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { StatCardComponent } from './pages/stat-card/stat-card.component';
 
 const routes: Routes = [
   { path: "", component: ContentComponent },
@@ -51,6 +52,7 @@ const routes: Routes = [
     LoginComponent,
     ContentComponent,
     DashboardComponent,
+    StatCardComponent,
   ],
   imports: [
     BrowserModule,
