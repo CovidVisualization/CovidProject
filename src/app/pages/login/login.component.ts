@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
 
   displayLogin = true;
   displayRegister = false;
+  login : any;
 
   province_th : string[] = [
     "กรุงเทพมหานคร",
@@ -100,6 +101,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private loginServ: LoginService,
     private router: Router,) {
+
     this.loginServ.onRegisterComplete.subscribe(data => {
       if (data) {
         console.log("Register complete Yeah")
@@ -110,12 +112,13 @@ export class LoginComponent implements OnInit {
       }
     })
 
-    this.loginServ.onLoginComplete.subscribe(async data => {
+    this.loginServ.onLoginComplete.subscribe(data => {
 
       if (data) {
+        // this.login = this.loginServ.loginObj;
         console.log("Login complete Yeah")
-        alert("yes");
-        // this.router.navigate(["/"])
+        // alert("yes");
+        this.router.navigate(["/"])
       } else {
         console.error("Login fail")
         alert("Login Failed.");

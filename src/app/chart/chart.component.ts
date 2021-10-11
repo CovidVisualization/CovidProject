@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'node_modules/chart.js';
 import { HttpClient } from '@angular/common/http';
+import { LoginService } from '../pages/login/login.service';
 
 
 @Component({
@@ -25,12 +26,16 @@ export class ChartComponent implements OnInit {
   data14 : any;
   data7 : any;
 
+  loginObj : any;
 
-  
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient , private loginServ : LoginService) {
+      this.loginObj = this.loginServ.loginObj;
+   }
 
   ngOnInit(): void {
+
+    console.log(this.loginObj);
+
     this.http.get('http://localhost:4200/proxy/api/covid/totalMonth').subscribe(data => {
 
       let date_lebels: string[] = [];

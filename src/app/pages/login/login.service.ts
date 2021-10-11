@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
-import { async } from '@angular/core/testing';
 
 @Injectable({
   providedIn: 'root'
@@ -9,15 +8,17 @@ import { async } from '@angular/core/testing';
 export class LoginService {
   onRegisterComplete = new EventEmitter<boolean>()
   onLoginComplete = new EventEmitter<boolean>()
+  loginObj : any;
 
 
   constructor(
-    private http : HttpClient
+    private http : HttpClient,
   ) { }
 
   register(item: any) {
     this.http.post('http://localhost:4200/proxy/api/covid/register', item).subscribe(
       res => {
+      this.loginObj = res;
       this.onRegisterComplete.emit(true)
       
       // console.log(res);
@@ -44,7 +45,7 @@ export class LoginService {
     this.http.post('http://localhost:4200/proxy/api/covid/login', item).subscribe(
       res => {
         this.onLoginComplete.emit(true)
-        // console.log(res);
+        this.loginObj = res;
         }, 
       err => {
         this.onLoginComplete.emit(false)
@@ -53,3 +54,4 @@ export class LoginService {
     
   }
 }
+
