@@ -100,16 +100,36 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private loginServ: LoginService,
-    private router: Router) {
+    private router: Router,
+    private http: HttpClient) {
     this.loginServ.onRegisterComplete.subscribe(data => {
       if (data) {
         console.log("Register complete Yeah")
-        this.router.navigate(["/"])
+        // this.router.navigate(["/"])
       } else {
         console.error("Register fail")
       }
     })
+
+    this.loginServ.onLoginComplete.subscribe(data => {
+      console.log(data);
+
+      if (data) {
+        console.log("Login complete Yeah")
+        this.router.navigate(["/"])
+      } else {
+        console.error("Login fail")
+      }
+    })
+
+    this.http.get('http://localhost:4200/proxy/api/covid/login').subscribe(data => {
+      console.log(data);
+    })
+
+
+
   }
+
 
   ngOnInit(): void {
     // let list = document.getElementById('datalistOptions'); 
@@ -165,18 +185,20 @@ export class LoginComponent implements OnInit {
   onLogin(loginFrom: NgForm): void {
     const loginToken = loginFrom.value;
 
-    const jsonObj = [];
+    // const jsonObj = [];
     let item : any = {}
     item.userEmail = loginToken.userEmail;
     item.userPassword = loginToken.password;
 
-    jsonObj.push(item);
-    console.log(jsonObj);
-    if (true){
-      //link
-    } else {
-      //display error
-    }
+    this.loginServ.login(item)
+
+    // jsonObj.push(item);
+    // console.log(jsonObj);
+    // if (true){
+    //   //link
+    // } else {
+    //   //display error
+    // }
   }
 
   onRegister(registerFrom: NgForm): void {
