@@ -1,11 +1,12 @@
-#divChart {
+.divChart {
     display: block;
-    width: 80%;
+    width: auto;
     height: auto;
-    margin-top: 3%;
+    /* margin-top: 3%;
     margin-left: 10%;
     margin-bottom: 5%;
-    margin-right: 10%;
+    margin-right: 10%; */
+    /* background-color: black; */
 }
 
 a.anchor {
@@ -16,6 +17,7 @@ a.anchor {
 }
 
 .header {
+    padding-top: 5%;
     padding-bottom: 1vh;
 }
 
@@ -32,4 +34,11 @@ a.anchor {
     display: block;
     width: auto;
     height: 50%;
+}
+
+#carouselExampleDark {
+    margin-left: 5%;
+    margin-right: 5%;
+    /* margin-bottom: 5%; */
+    padding-bottom: 5%;
 }
