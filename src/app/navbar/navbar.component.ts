@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { BsDropdownConfig } from 'ngx-bootstrap/dropdown';
+import { Component, DoCheck } from '@angular/core';
 import { LoginService } from '../pages/login/login.service';
 
 @Component({
@@ -7,10 +6,7 @@ import { LoginService } from '../pages/login/login.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
 })
-export class NavbarComponent implements OnInit {
-  isCollapsed = false;
-  isloggin = false;
-  user = "Mansea";
+export class NavbarComponent implements DoCheck  {
 
   loginObj : any;
 
@@ -18,11 +14,18 @@ export class NavbarComponent implements OnInit {
     this.loginObj = this.loginServ.loginObj;
   }
 
-  ngOnInit(): void {
+  ngDoCheck(): void {
+    this.loginObj = this.loginServ.loginObj;
+
   }
 
+
+
+
   onLogout() {
-    return false;
+  
+    this.loginServ.loginObj = undefined;
+    this.loginObj = undefined;
   }
   
 

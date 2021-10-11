@@ -118,7 +118,7 @@ export class LoginComponent implements OnInit {
         // this.login = this.loginServ.loginObj;
         console.log("Login complete Yeah")
         // alert("yes");
-        this.router.navigate(["/"])
+        this.router.navigate(["dashboard"])
       } else {
         console.error("Login fail")
         alert("Login Failed.");

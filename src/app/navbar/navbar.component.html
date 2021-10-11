@@ -14,16 +14,20 @@
       <div class="centerElement">
         <ul class="nav navbar-nav mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="#Infected">ยอดผู้ติดเชื้อ</a>
+            <a class="nav-link" *ngIf="!loginObj" href="#Infected">ยอดผู้ติดเชื้อ</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#map">จุดเสี่ยงในประเทศไทย</a>
+            <a class="nav-link"  *ngIf="!loginObj" href="#map">จุดเสี่ยงในประเทศไทย</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#chart">กราฟ</a>
+            <a class="nav-link"  *ngIf="!loginObj" href="#chart">กราฟ</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#check-covid" tabindex="-1">ตรวจโควิด</a>
+            <a class="nav-link"  *ngIf="!loginObj" href="#check-covid" tabindex="-1">ตรวจโควิด</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link"  *ngIf="loginObj" href="#" tabindex="-1">Dashboard ทิพย์</a>
           </li>
         </ul>
       </div>
@@ -46,10 +50,10 @@
               dropdownToggle
               (click)="(false)"
             >
-              ยินดีต้อนรับ {{ user }}
+              ยินดีต้อนรับ {{ loginObj.username }}
             </a>
             <div class="dropdown-menu" *dropdownMenu aria-labelledby="button-autoclose1">
-              <a class="dropdown-item">Dashboard</a>
+              <a class="dropdown-item" routerLink="dashboard">Dashboard</a>
               <a class="dropdown-item">ไม่รู้เหมือนกัน</a>
               <a
                 id="logoutButton"
