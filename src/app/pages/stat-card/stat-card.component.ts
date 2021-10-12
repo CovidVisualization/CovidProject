@@ -18,7 +18,7 @@ export class StatCardComponent implements OnInit {
 
   loginObj : any;
 
-  newCaseProvince : String
+  newCaseProvince : String;
 
   constructor(private http: HttpClient , private loginServ : LoginService) {
     this.loginObj = this.loginServ.loginObj;
@@ -60,11 +60,11 @@ export class StatCardComponent implements OnInit {
     })
 
     this.http.get('http://localhost:4200/proxy/api/covid/province').subscribe(data => {
-
       Object.entries(data).forEach(
         ([key, value]) => {
+          var intNewCase: number = +value.newCase;
           if (value.province === this.loginObj.province){
-            this.newCaseProvince = value.newCase;
+            this.newCaseProvince = intNewCase.toLocaleString();
           }
         }
       );
