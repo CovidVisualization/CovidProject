@@ -11,20 +11,31 @@
     text-align: center;
     position: relative;
     margin: auto;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+.rangeInput label{
+    font-size: 1.5rem;
 }
 
 .divChartLeft {
-    width: 40%;
+    width: 60%;
     height: auto;
     position: relative;
     display: inline-block;
 }
 
 .divChartRight {
-    width: 40%;
+    width: 60%;
     height: auto;
     position: relative;
     display: inline-block;
+}
+
+.chartContainer p{
+    font-size: 1.5rem;
+
 }
 
 p {
@@ -33,4 +44,9 @@ p {
 
 .chartContent {
     justify-content: center;
+    border-radius: 1rem;
+    margin: 5rem;
+    padding: 3rem;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4);
+    background-color: white;
 }

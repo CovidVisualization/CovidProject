@@ -1,7 +1,6 @@
 .statCard {
     height: auto;
     margin: 5rem;
-    background-color: #fbfdff;
 }
 @media screen and (max-width: 425px) {
     .statCard {
