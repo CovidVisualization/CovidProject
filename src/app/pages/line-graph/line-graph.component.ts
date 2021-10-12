@@ -27,6 +27,7 @@ export class LineGraphComponent implements OnInit {
   }
 
   dateRange = -30;
+  absRange = 15;
 
   dataAll: any;
   dataProvince: any;
@@ -112,16 +113,6 @@ export class LineGraphComponent implements OnInit {
             'rgba(255, 0, 0, 1)'
           ],
           borderWidth: 1
-        },{
-          label: 'ผูู้ติดเชื้อทั้งหมด',
-          data: this.date_newCase.slice(this.dateRange),
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.4)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)'
-          ],
-          borderWidth: 1
         }]
       }
     })
@@ -131,6 +122,7 @@ export class LineGraphComponent implements OnInit {
   update(dataRangeForm: NgForm) {
     const token = dataRangeForm.value;
     this.dateRange = token.dateRange * -1;
+    this.absRange = token.dateRange;
 
     //Data for Left Chart (All Area)
     this.dataAll = {
@@ -169,16 +161,6 @@ export class LineGraphComponent implements OnInit {
         ],
         borderColor: [
           'rgba(255, 0, 0, 1)'
-        ],
-        borderWidth: 1
-      },{
-        label: 'ผูู้ติดเชื้อทั้งหมด',
-        data: this.date_newCase.slice(this.dateRange),
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.4)'
-        ],
-        borderColor: [
-          'rgba(255, 99, 132, 1)'
         ],
         borderWidth: 1
       }]
