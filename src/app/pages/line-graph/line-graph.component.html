@@ -10,13 +10,13 @@
     <div class="chartContainer">
         <div class="divChartLeft">
             <p>ทั่วประเทศ</p>
-            <chart [type]="type" [data]="data" [options]="options"></chart>
+            <chart [type]="type" [data]="dataAll" [options]="options"></chart>
         </div>
 
         <div class="divChartRight">
             <p *ngIf="loginObj">จังหวัด {{loginObj.province}}</p>
             <p *ngIf="!loginObj">tmep</p>
-            <chart [type]="type" [data]="data" [options]="options"></chart>
+            <chart [type]="type" [data]="dataProvince" [options]="options"></chart>
         </div>
 
     </div>

@@ -10,9 +10,9 @@ import { LoginService } from '../login/login.service';
 })
 export class LineGraphComponent implements OnInit {
 
-  loginObj : any;
+  loginObj: any;
 
-  constructor(private http: HttpClient, private loginServ : LoginService) {
+  constructor(private http: HttpClient, private loginServ: LoginService) {
     this.loginObj = this.loginServ.loginObj;
   }
 
@@ -26,13 +26,20 @@ export class LineGraphComponent implements OnInit {
     }
   }
 
+  provinceArray: Object[] = [];
+
   dateRange = -30;
 
-  data : any;
+  dataAll: any;
+  dataProvince: any;
 
   date_lebels: string[] = [];
   date_newCase: string[] = [];
   data_healed: string[] = [];
+
+  date_lebelsProvince: string[] = [];
+  date_newCaseProvince: string[] = [];
+  data_healedProvince: string[] = [];
 
   ngOnInit(): void {
 
@@ -50,7 +57,7 @@ export class LineGraphComponent implements OnInit {
         ([key, value]) => this.data_healed.push(value["healed"])
       );
 
-      this.data = {
+      this.dataAll = {
         labels: this.date_lebels.slice(this.dateRange),
         datasets: [{
           label: 'ผูู้ติดเชื้อ',
@@ -75,13 +82,79 @@ export class LineGraphComponent implements OnInit {
         }]
       }
     })
+
+    this.http.get('http://localhost:4200/proxy/api/covid/weekprovince').subscribe(data => {
+
+      // console.log(data);
+
+      // Object.entries(data).forEach(
+      //   ([key, value]) => {
+
+      //     // console.log(value);
+      //     let temp : any= {};
+      //     temp.tempDate = (value);
+      //     if (temp[0] === value.date) {
+      //       this.provinceArray.push(value);
+      //     }
+      //     console.log(this.provinceArray)
+      //   }
+      // );
+
+      Object.entries(data).forEach(
+        ([key, value]) => {
+          // console.log(value.province)
+          if (value.province == this.loginObj.province) {
+            this.date_lebelsProvince.push(value["date"])
+          }
+        }
+      );
+
+      Object.entries(data).forEach(
+        ([key, value]) => {
+          if (value.province == this.loginObj.province) {
+            this.date_newCaseProvince.push(value["newCase"])
+          }
+        }
+      );
+
+
+
+      this.dataProvince = {
+        labels: this.date_lebelsProvince.slice(this.dateRange),
+        datasets: [{
+          label: 'ผูู้ติดเชื้อในจังหวัด',
+          data: this.date_newCaseProvince.slice(this.dateRange),
+          backgroundColor: [
+            'rgba(255, 80, 100, 0.9)'
+          ],
+          borderColor: [
+            'rgba(255, 0, 0, 1)'
+          ],
+          borderWidth: 1
+        },{
+          label: 'ผูู้ติดเชื้อทั้งหมด',
+          data: this.date_newCase.slice(this.dateRange),
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.4)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)'
+          ],
+          borderWidth: 1
+        }]
+      }
+    })
+
+
+
   } //end of ngOnInit
 
-  update(dataRangeForm : NgForm){
+  update(dataRangeForm: NgForm) {
     const token = dataRangeForm.value;
     this.dateRange = token.dateRange * -1;
 
-    this.data = {
+    //Data for Left Chart (All Area)
+    this.dataAll = {
       labels: this.date_lebels.slice(this.dateRange),
       datasets: [{
         label: 'ผูู้ติดเชื้อ',
@@ -106,5 +179,36 @@ export class LineGraphComponent implements OnInit {
       }]
     }
 
+
+    //Data for Right Chart (Province)
+    this.dataProvince = {
+      labels: this.date_lebelsProvince.slice(this.dateRange),
+      datasets: [{
+        label: 'ผูู้ติดเชื้อในจังหวัด',
+        data: this.date_newCaseProvince.slice(this.dateRange),
+        backgroundColor: [
+          'rgba(255, 80, 100, 0.9)'
+        ],
+        borderColor: [
+          'rgba(255, 0, 0, 1)'
+        ],
+        borderWidth: 1
+      },{
+        label: 'ผูู้ติดเชื้อทั้งหมด',
+        data: this.date_newCase.slice(this.dateRange),
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.4)'
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)'
+        ],
+        borderWidth: 1
+      }]
+    }
+
+
+
   }
+
+
 }

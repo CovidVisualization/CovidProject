@@ -20,8 +20,6 @@ export class MapSectionComponent implements OnInit {
 
   mapData : MapData[] = [];
 
-  // MAP_DATA: MapData[] = mapJSON;
-
   dataSource : MatTableDataSource<MapData>;
 
   constructor(private http: HttpClient) { }
