@@ -1,0 +1,27 @@
+.grid-container {
+    width: 60%;
+    height: auto;
+    position: relative;
+    display: inline-block;
+}
+
+.chartContainer {
+    width: 60%;
+    height: auto;
+    position: relative;
+    display: inline-block;
+}
+
+.pageNav {
+    /* width: 40%; */
+}
+
+.search {
+    width: 40%;
+}
+
+section {
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -19,11 +19,26 @@ export interface MapData {
 
 export class BarGraphComponent implements OnInit {
 
-  mapData : MapData[] = [];
+  mapData: MapData[] = [];
 
-  dataSource : MatTableDataSource<MapData>;
+  dataSource: MatTableDataSource<MapData>;
 
-  constructor(private http : HttpClient) { }
+  constructor(private http: HttpClient) { }
+
+  type = "bar"
+  options = {
+    responsive: true,
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+
+  data: any;
+
+  date_lebels: string[] = [];
+  date_newCase: string[] = [];
 
   ngOnInit(): void {
     this.http.get('http://localhost:4200/proxy/api/covid/province').subscribe(data => {
@@ -37,7 +52,37 @@ export class BarGraphComponent implements OnInit {
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
 
+
+      this.data = {
+        labels: [this.dataSource.filteredData[0].province,
+        this.dataSource.filteredData[1].province,
+        this.dataSource.filteredData[2].province,
+        this.dataSource.filteredData[3].province,
+        this.dataSource.filteredData[4].province,
+        this.dataSource.filteredData[5].province,
+      ],
+        datasets: [{
+          label: "ผู้ติดเชื้อ",
+          data: [this.dataSource.filteredData[0].newCase,
+          this.dataSource.filteredData[1].newCase,
+          this.dataSource.filteredData[2].newCase,
+          this.dataSource.filteredData[3].newCase,
+          this.dataSource.filteredData[4].newCase,
+          this.dataSource.filteredData[5].newCase,
+        ],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.4)','rgba(255, 255, 132, 0.4)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)'
+          ],
+          borderWidth: 1
+        }]
+      }
+
+      
     })
+
   }
 
   displayedColumns: string[] = [
@@ -53,6 +98,38 @@ export class BarGraphComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  updateChart() {
+
+    let provinceArray : any[] = [];
+    let newCaseArray : any[] = [];
+
+    for (let i = 0; i < 6; i++) {
+      try {
+        provinceArray.push(this.dataSource.filteredData[i].province)
+        newCaseArray.push(this.dataSource.filteredData[i].newCase)
+      } catch { }
+    }
+
+    this.data = {
+      labels: provinceArray,
+      datasets: [{
+        label: "ผู้ติดเชื้อ",
+        data: newCaseArray,
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.4)','rgba(255, 255, 132, 0.4)'
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)'
+        ],
+        borderWidth: 1
+      }]
+    }
+
+
+
+
   }
 
 
