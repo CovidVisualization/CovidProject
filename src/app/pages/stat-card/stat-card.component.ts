@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../login/login.service';
 
 @Component({
   selector: 'app-stat-card',
@@ -17,7 +18,13 @@ export class StatCardComponent implements OnInit {
   amountDeath = "";
   informationDate = "";
 
-  constructor(private http: HttpClient) { }
+  loginObj : any;
+
+  newCaseProvince : String
+
+  constructor(private http: HttpClient , private loginServ : LoginService) {
+    this.loginObj = this.loginServ.loginObj;
+  }
 
   ngOnInit(): void {
     this.http.get<any>('http://localhost:4200/proxy/api/covid/totalcovid').subscribe(data => {
@@ -51,7 +58,18 @@ export class StatCardComponent implements OnInit {
       if (charDate.toLocaleString() != "") {
         this.informationDate = charDate.toLocaleString()
       }
+      
+    })
 
+    this.http.get('http://localhost:4200/proxy/api/covid/province').subscribe(data => {
+
+      Object.entries(data).forEach(
+        ([key, value]) => {
+          if (value.province === this.loginObj.province){
+            this.newCaseProvince = value.newCase;
+          }
+        }
+      );
     })
   }
 

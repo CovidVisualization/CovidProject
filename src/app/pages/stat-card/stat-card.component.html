@@ -1,38 +1,57 @@
 <p>stat-card works!</p>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">ผู้ติดเชื้อสะสมทั้งประเทศ</h5>
+        <p class="card-text">{{ amountInfected }} คน</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6" *ngIf="loginObj">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">ผู้ติดเชื้อจังหวัด {{loginObj.province}}</h5>
+        <p class="card-text">{{ newCaseProvince }} คน</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="row">
     <div class="col-sm-3">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-3">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <h5 class="card-title">ผู้ติดเชื้อวันนี้</h5>
+          <p class="card-text">{{ amountInfectedToday }} คน</p>
         </div>
       </div>
     </div>
     <div class="col-sm-3">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h5 class="card-title">กำลังรักษา</h5>
+            <p class="card-text">{{ amountHealing }} คน</p>
+
           </div>
         </div>
       </div>
       <div class="col-sm-3">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h5 class="card-title">รักษาหายสะสม</h5>
+            <p class="card-text">{{ amountHealed }} คน</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">เสียชีวิตสะสม</h5>
+            <p class="card-text">{{ amountDeath }} คน</p>
+  
           </div>
         </div>
       </div>
