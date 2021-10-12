@@ -1,27 +1,83 @@
 .grid-container {
-    width: 60%;
+
     height: auto;
     position: relative;
-    display: inline-block;
+}
+
+h1 {
+    font-size: 1rem;
 }
 
 .chartContainer {
-    width: 60%;
+
     height: auto;
     position: relative;
-    display: inline-block;
 }
 
 .pageNav {
     /* width: 40%; */
 }
 
-.search {
-    width: 40%;
-}
 
 section {
     display : flex;
     justify-content: center;
     align-items: center;
 }
+
+.barContent {
+    justify-content: center;
+    border-radius: 1rem;
+    margin: 5rem;
+    padding: 3rem;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4);
+    background-color: white;
+
+}
+
+/** Table **/
+.mat-paginator {
+    font-family: Prompt;
+    width: auto;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    margin-top: 24px;
+    font-family: Prompt;
+    border-radius: 1em;
+    align-items: left;
+
+  
+  }
+
+table {
+    width: 100%;
+    font-family: Prompt;
+    border-collapse: collapse;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    background-color: white;
+    table-layout: fixed;
+}
+  th, td {
+    overflow: hidden;
+    width: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .mat-column-newCase {
+    width: 50% !important;
+    padding-left: 2rem;
+    flex: 0 0 200px;
+  }
+
+  .mat-form-field {
+    font-size: 12px;
+    width: 100%;
+    font-family: Prompt;
+  }
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    background-color: white;
+    border-radius: 5px;
+  }
+  

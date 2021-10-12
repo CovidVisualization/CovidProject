@@ -126,10 +126,7 @@ export class BarGraphComponent implements OnInit {
         borderWidth: 1
       }]
     }
-
-
-
-
+    
   }
 
 
