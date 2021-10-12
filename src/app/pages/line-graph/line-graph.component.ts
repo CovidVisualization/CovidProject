@@ -26,8 +26,6 @@ export class LineGraphComponent implements OnInit {
     }
   }
 
-  provinceArray: Object[] = [];
-
   dateRange = -30;
 
   dataAll: any;
@@ -85,21 +83,6 @@ export class LineGraphComponent implements OnInit {
 
     this.http.get('http://localhost:4200/proxy/api/covid/weekprovince').subscribe(data => {
 
-      // console.log(data);
-
-      // Object.entries(data).forEach(
-      //   ([key, value]) => {
-
-      //     // console.log(value);
-      //     let temp : any= {};
-      //     temp.tempDate = (value);
-      //     if (temp[0] === value.date) {
-      //       this.provinceArray.push(value);
-      //     }
-      //     console.log(this.provinceArray)
-      //   }
-      // );
-
       Object.entries(data).forEach(
         ([key, value]) => {
           // console.log(value.province)
@@ -116,8 +99,6 @@ export class LineGraphComponent implements OnInit {
           }
         }
       );
-
-
 
       this.dataProvince = {
         labels: this.date_lebelsProvince.slice(this.dateRange),
@@ -144,8 +125,6 @@ export class LineGraphComponent implements OnInit {
         }]
       }
     })
-
-
 
   } //end of ngOnInit
 
@@ -179,7 +158,6 @@ export class LineGraphComponent implements OnInit {
       }]
     }
 
-
     //Data for Right Chart (Province)
     this.dataProvince = {
       labels: this.date_lebelsProvince.slice(this.dateRange),
@@ -205,10 +183,5 @@ export class LineGraphComponent implements OnInit {
         borderWidth: 1
       }]
     }
-
-
-
   }
-
-
 }

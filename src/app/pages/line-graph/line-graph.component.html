@@ -15,7 +15,7 @@
 
         <div class="divChartRight">
             <p *ngIf="loginObj">จังหวัด {{loginObj.province}}</p>
-            <p *ngIf="!loginObj">tmep</p>
+            <p *ngIf="!loginObj">temp</p>
             <chart [type]="type" [data]="dataProvince" [options]="options"></chart>
         </div>
 
