@@ -38,10 +38,6 @@ export class LineGraphComponent implements OnInit {
 
     this.http.get('http://localhost:4200/proxy/api/covid/totalMonth').subscribe(data => {
 
-      // let date_lebels: string[] = [];
-      // let date_newCase: string[] = [];
-      // let data_healed: string[] = [];
-
       Object.entries(data).forEach(
         ([key, value]) => this.date_lebels.push(value["date"])
       );
@@ -54,7 +50,6 @@ export class LineGraphComponent implements OnInit {
         ([key, value]) => this.data_healed.push(value["healed"])
       );
 
-      // date_newCase.splice(15, 0, '0');
       this.data = {
         labels: this.date_lebels.slice(this.dateRange),
         datasets: [{
@@ -84,11 +79,7 @@ export class LineGraphComponent implements OnInit {
 
   update(dataRangeForm : NgForm){
     const token = dataRangeForm.value;
-    this.dateRange = token.dateRange * -1
-    // console.log(temp);
-    // this.dateRange = token.dateRange;
-    // console.log(dateRangein);
-
+    this.dateRange = token.dateRange * -1;
 
     this.data = {
       labels: this.date_lebels.slice(this.dateRange),
@@ -114,15 +105,6 @@ export class LineGraphComponent implements OnInit {
         borderWidth: 1
       }]
     }
-
-
-
-
-
-
-
-
-
 
   }
 }
