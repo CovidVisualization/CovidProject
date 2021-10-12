@@ -131,11 +131,42 @@ a.anchor {
     box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4);
 }
 
+@media (max-width: 1666px) {
+    .box h3{
+        color: white;
+        font-size: 2em;
+        text-align: center;
+    }
 
+}
 
+@media (max-width: 1238px) {
+    .box h3{
+        color: white;
+        font-size: 1.5em;
+        text-align: center;
+    }
+    .box h4{
+        color: white;
+        font-size: 1em;
+        text-align: center;
+    }
 
+}
 
+@media (max-width: 992px) {
+    .box h3{
+        color: white;
+        font-size: 2.5em;
+        text-align: center;
+    }
+    .box h4{
+        color: white;
+        font-size: 1.5em;
+        text-align: center;
+    }
 
+}
 
 
 
