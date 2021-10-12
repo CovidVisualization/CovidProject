@@ -1,58 +1,57 @@
-<p>stat-card works!</p>
-
-<div class="row">
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">ผู้ติดเชื้อสะสมทั้งประเทศ</h5>
-        <p class="card-text">{{ amountInfected }} คน</p>
+<section class="statCard">
+    <div class="row">
+      <div class="col-sm-12 col-xl-6 col-lg-6 col-md-6 mb-4">
+        <div class="card" id="boxTop1">
+          <div class="card-body">
+            <h5 class="card-title">ผู้ติดเชื้อสะสม<br>ในประเทศ</h5>
+            <p class="card-text">{{ amountInfected }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-xl-6 col-lg-6 col-md-6 mb-4" *ngIf="loginObj">
+        <div class="card" id="boxTop2">
+          <div class="card-body">
+            <h5 class="card-title">
+              ผู้ติดเชื้อจังหวัด <br> {{ loginObj.province }}
+            </h5>
+            <p class="card-text">{{ newCaseProvince }}</p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="col-sm-6" *ngIf="loginObj">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">ผู้ติดเชื้อจังหวัด {{loginObj.province}}</h5>
-        <p class="card-text">{{ newCaseProvince }} คน</p>
-      </div>
-    </div>
-  </div>
-</div>
 
-<div class="row">
-    <div class="col-sm-3">
-      <div class="card">
+  <div class="row">
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 mb-4">
+      <div class="card" id="box1">
         <div class="card-body">
           <h5 class="card-title">ผู้ติดเชื้อวันนี้</h5>
-          <p class="card-text">{{ amountInfectedToday }} คน</p>
+          <p class="card-text">{{ amountInfectedToday }}</p>
         </div>
       </div>
     </div>
-    <div class="col-sm-3">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">กำลังรักษา</h5>
-            <p class="card-text">{{ amountHealing }} คน</p>
-
-          </div>
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 mb-4">
+      <div class="card" id="box2">
+        <div class="card-body">
+          <h5 class="card-title">กำลังรักษา</h5>
+          <p class="card-text">{{ amountHealing }}</p>
         </div>
       </div>
-      <div class="col-sm-3">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">รักษาหายสะสม</h5>
-            <p class="card-text">{{ amountHealed }} คน</p>
-
-          </div>
+    </div>
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 mb-4">
+      <div class="card" id="box3">
+        <div class="card-body">
+          <h5 class="card-title">รักษาหายสะสม</h5>
+          <p class="card-text">{{ amountHealed }}</p>
         </div>
       </div>
-      <div class="col-sm-3">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">เสียชีวิตสะสม</h5>
-            <p class="card-text">{{ amountDeath }} คน</p>
-  
-          </div>
+    </div>
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 mb-4">
+      <div class="card" id="box4">
+        <div class="card-body">
+          <h5 class="card-title">เสียชีวิตสะสม</h5>
+          <p class="card-text">{{ amountDeath }}</p>
         </div>
       </div>
-</div>
+    </div>
+  </div>
+</section>

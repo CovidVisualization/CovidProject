@@ -1,0 +1,72 @@
+.statCard {
+    height: auto;
+    margin: 5rem;
+    background-color: #fbfdff;
+}
+@media screen and (max-width: 425px) {
+    .statCard {
+        height: auto;
+        margin: 2rem;
+        background-color: #fbfdff;
+    }
+
+    h5 {
+        font-size: 0.5rem;
+        font-weight: bold;
+    }
+    
+    p {
+        font-size: 1.5rem; 
+    }
+    
+}
+
+.card {
+    text-align: center;
+    border-radius: 1rem;
+    color:white;
+    border: 0px;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4);
+}
+
+.row {
+    padding: 1rem;
+}
+#boxTop1 {
+    background: linear-gradient(205deg,#ea5771, #d62646);
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4);
+}
+
+#boxTop2 {
+    background: linear-gradient(205deg,#f68e56, #d65d1c);
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4);
+}
+
+#box1 {
+    background: linear-gradient(205deg,#ea5771, #d62646);
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4);
+}
+
+#box2 {
+    background: linear-gradient(205deg,#f68e56, #d65d1c);
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4);
+}
+
+#box3 {
+    background: linear-gradient(205deg,#3cb878, #0f8548);
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4);
+}
+
+#box4 {
+    background: linear-gradient(205deg,#f26c4f, #c8492c);
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4);
+}
+
+h5 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+p {
+    font-size: 2.5rem; 
+}

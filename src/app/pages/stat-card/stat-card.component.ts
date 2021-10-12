@@ -9,8 +9,6 @@ import { LoginService } from '../login/login.service';
 })
 export class StatCardComponent implements OnInit {
 
-
-
   amountInfected = "";
   amountInfectedToday = "";
   amountHealing = "";
