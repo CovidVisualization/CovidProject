@@ -34,7 +34,7 @@ export class ChartComponent implements OnInit {
 
   ngOnInit(): void {
 
-    console.log(this.loginObj);
+    // console.log(this.loginObj);
 
     this.http.get('http://localhost:4200/proxy/api/covid/totalMonth').subscribe(data => {
 

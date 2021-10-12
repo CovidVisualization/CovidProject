@@ -1,0 +1,36 @@
+.chartContainer {
+    display : flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.rangeInput {
+    width: 50%;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    margin: auto;
+}
+
+.divChartLeft {
+    width: 40%;
+    height: auto;
+    position: relative;
+    display: inline-block;
+}
+
+.divChartRight {
+    width: 40%;
+    height: auto;
+    position: relative;
+    display: inline-block;
+}
+
+p {
+    text-align: center;
+}
+
+.chartContent {
+    justify-content: center;
+}

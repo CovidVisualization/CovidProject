@@ -1,1 +1,25 @@
 <p>line-graph works!</p>
+<section class="chartContent">
+
+    <div class="rangeInput">
+        <form #dataRangeForm="ngForm" >
+            <label for="customRange3" class="form-label">Date Range</label>
+            <input type="range" class="form-range" min="0" max="30" step="1" id="customRange" ngModel name="dateRange" (change)="update(dataRangeForm)">
+        </form>
+    </div>
+
+    <div class="chartContainer">
+        <div class="divChartLeft">
+            <p>ทั่วประเทศ</p>
+            <chart [type]="type" [data]="data" [options]="options"></chart>
+        </div>
+
+        <div class="divChartRight">
+            <p *ngIf="loginObj">จังหวัด {{loginObj.province}}</p>
+            <p *ngIf="!loginObj">tmep</p>
+            <chart [type]="type" [data]="data" [options]="options"></chart>
+        </div>
+
+    </div>
+
+</section>
