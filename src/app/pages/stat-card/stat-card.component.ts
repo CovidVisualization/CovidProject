@@ -60,6 +60,7 @@ export class StatCardComponent implements OnInit {
     })
 
     this.http.get('http://localhost:4200/proxy/api/covid/province').subscribe(data => {
+  
       Object.entries(data).forEach(
         ([key, value]) => {
           var intNewCase: number = +value.newCase;
