@@ -62,17 +62,17 @@ export class LineGraphComponent implements OnInit {
           label: 'ผูู้ติดเชื้อ',
           data: this.date_newCase.slice(this.dateRange),
           backgroundColor: [
-            'rgba(255, 99, 132, 0.4)'
+            'rgba(255, 99, 132, 0.9)'
           ],
           borderColor: [
-            'rgba(255, 99, 132, 1)'
+            'rgba(255, 0, 0, 1)'
           ],
           borderWidth: 1
         }, {
           label: 'รักษาหาย',
           data: this.data_healed.slice(this.dateRange),
           backgroundColor: [
-            'rgba(127, 191, 63, 0.2)'
+            'rgba(127, 191, 63, 0.3)'
           ],
           borderColor: [
             'rgba(76, 114, 38, 1)'
@@ -107,7 +107,7 @@ export class LineGraphComponent implements OnInit {
           label: 'ผูู้ติดเชื้อในจังหวัด',
           data: this.date_newCaseProvince.slice(this.dateRange),
           backgroundColor: [
-            'rgba(255, 80, 100, 0.9)'
+            'rgba(255, 99, 132, 0.93)'
           ],
           borderColor: [
             'rgba(255, 0, 0, 1)'
@@ -131,10 +131,10 @@ export class LineGraphComponent implements OnInit {
         label: 'ผูู้ติดเชื้อ',
         data: this.date_newCase.slice(this.dateRange),
         backgroundColor: [
-          'rgba(255, 99, 132, 0.4)'
+          'rgba(255, 99, 132, 0.9)'
         ],
         borderColor: [
-          'rgba(255, 99, 132, 1)'
+          'rgba(255, 0, 0, 1)'
         ],
         borderWidth: 1
       }, {
@@ -157,7 +157,7 @@ export class LineGraphComponent implements OnInit {
         label: 'ผูู้ติดเชื้อในจังหวัด',
         data: this.date_newCaseProvince.slice(this.dateRange),
         backgroundColor: [
-          'rgba(255, 80, 100, 0.9)'
+          'rgba(255, 99, 132, 0.93)'
         ],
         borderColor: [
           'rgba(255, 0, 0, 1)'

@@ -21,7 +21,11 @@ export class BarGraphComponent implements OnInit {
 
   dataSource: MatTableDataSource<MapData>;
 
-  constructor(private http: HttpClient) {}
+  loginObj : any ;
+
+  constructor(private http: HttpClient, private loginServ : LoginService) {
+    this.loginObj = this.loginServ.loginObj;
+  }
 
   type = 'bar';
   options = {
@@ -38,12 +42,25 @@ export class BarGraphComponent implements OnInit {
   date_lebels: string[] = [];
   date_newCase: string[] = [];
 
+  user_province_newCase: string;
+  user_province: string;
+
   ngOnInit(): void {
     this.http
       .get('http://localhost:4200/proxy/api/covid/province')
       .subscribe((data) => {
         Object.entries(data).forEach(([key, value]) =>
           this.mapData.push(value)
+        );
+
+        this.user_province = this.loginObj.province;
+
+        Object.entries(this.mapData).forEach(
+          ([key, value]) => {
+            if (value.province == this.loginObj.province) {
+              this.user_province_newCase = value["newCase"]
+            }
+          }
         );
 
         this.dataSource = new MatTableDataSource(this.mapData);
@@ -53,26 +70,27 @@ export class BarGraphComponent implements OnInit {
 
         this.data = {
           labels: [
+            this.user_province,
             this.dataSource.filteredData[0].province,
             this.dataSource.filteredData[1].province,
             this.dataSource.filteredData[2].province,
             this.dataSource.filteredData[3].province,
             this.dataSource.filteredData[4].province,
-            this.dataSource.filteredData[5].province,
+            
           ],
           datasets: [
             {
               label: 'ผู้ติดเชื้อ',
               data: [
+                this.user_province_newCase,
                 this.dataSource.filteredData[0].newCase,
                 this.dataSource.filteredData[1].newCase,
                 this.dataSource.filteredData[2].newCase,
                 this.dataSource.filteredData[3].newCase,
                 this.dataSource.filteredData[4].newCase,
-                this.dataSource.filteredData[5].newCase,
               ],
               backgroundColor: [
-                'rgba(0, 0, 0, 0.2)',
+                'rgba(255, 99, 132, 0.9)',
                 'rgba(0, 0, 0, 0.2)',
                 'rgba(0, 0, 0, 0.2)',
                 'rgba(0, 0, 0, 0.2)',
@@ -110,7 +128,10 @@ export class BarGraphComponent implements OnInit {
     let provinceArray: any[] = [];
     let newCaseArray: any[] = [];
 
-    for (let i = 0; i < 6; i++) {
+    provinceArray.push(this.user_province);
+    newCaseArray.push(this.user_province_newCase);
+
+    for (let i = 0; i < 5; i++) {
       try {
         provinceArray.push(this.dataSource.filteredData[i].province);
         newCaseArray.push(this.dataSource.filteredData[i].newCase);
@@ -124,7 +145,7 @@ export class BarGraphComponent implements OnInit {
           label: 'ผู้ติดเชื้อ',
           data: newCaseArray,
           backgroundColor: [
-            'rgba(0, 0, 0, 0.2)',
+            'rgba(255, 99, 132, 0.9)',
             'rgba(0, 0, 0, 0.2)',
             'rgba(0, 0, 0, 0.2)',
             'rgba(0, 0, 0, 0.2)',
