@@ -33,6 +33,12 @@ section {
     box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4);
     background-color: white;
 
+    
+}
+
+.barContent p {
+  font-size: 1.5rem;
+  text-align:  center;
 }
 
 /** Table **/

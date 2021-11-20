@@ -35,6 +35,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { StatCardComponent } from './pages/stat-card/stat-card.component';
 import { LineGraphComponent } from './pages/line-graph/line-graph.component';
 import { BarGraphComponent } from './pages/bar-graph/bar-graph.component';
+import { CovidLocationComponent } from './pages/covid-location/covid-location.component';
 
 const routes: Routes = [
   { path: "", component: ContentComponent },
@@ -57,6 +58,7 @@ const routes: Routes = [
     StatCardComponent,
     LineGraphComponent,
     BarGraphComponent,
+    CovidLocationComponent,
   ],
   imports: [
     BrowserModule,

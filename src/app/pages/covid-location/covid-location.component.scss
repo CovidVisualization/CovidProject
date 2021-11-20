@@ -1,0 +1,295 @@
+a.anchor {
+    display: block;
+    position: relative;
+    top: -150px;
+    visibility: hidden;
+  }
+  
+  .section-1 {
+    justify-content: center;
+    border-radius: 1rem;
+    margin: 5rem;
+    padding: 3rem;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4);
+    background-color: white;
+  }
+  
+  .header {
+
+  }
+  
+  .header h2 {
+    color: black;
+    font-size: 3rem;
+    // margin-left: 7vh;
+  }
+  
+  .header h3 {
+    color: black;
+    font-size: 2vh;
+    margin-right: 10vh;
+  }
+  .filter-field {
+    margin: 7vh;
+    padding-bottom: 30vh;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 40vh;
+    font-family: Prompt;
+  }
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    background-color: white;
+    border-radius: 5px;
+  }
+  
+  .mat-form-field .mat-input-element {
+    color: black;
+  }
+  
+  table {
+    width: 100%;
+    font-family: Prompt;
+    border-collapse: collapse;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    background-color: rgba(252, 252, 252, 1);
+  }
+  
+  .mat-table {
+    overflow:hidden !important;
+  }
+  
+  .mat-paginator {
+    font-family: Prompt;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+    background-color: rgba(253, 253, 253, 1);
+  
+  }
+  
+  table tr:last-child td /*To remove the last border*/
+  {
+    border-bottom:0 solid
+  }
+  
+  td,
+  th {
+    width: 10%;
+  }
+  
+  th {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .mat-row {
+    &:hover {
+      background-color: #e9f3ff;
+    }
+    a {
+      color: #3e75ff;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  
+  .mat-icon {
+    color: #3e75ff;
+  }
+  .price-label {
+    color: #f26c4f;
+  
+  }
+  
+  @media screen and (max-width: 850px) {
+    .header h2 {
+      color: black;
+      font-size: 40px;
+    }
+    .mat-elevation-z8 {
+      background: transparent;
+      box-shadow: none;
+    }
+  
+    .mat-form-field {
+      font-size: 14px;
+      width: 100%;
+      font-family: Prompt;
+    }
+  
+    .mat-header-row {
+      display: none;
+    }
+  
+    tbody {
+      display: block;
+      width: 100%;
+      font-family: Prompt;
+    }
+  
+    .mat-table {
+      background: transparent;
+      * {
+        box-sizing: border-box;
+      }
+  
+      .mat-row {
+        display: block;
+        overflow: hidden;
+        height: auto;
+        position: relative;
+        clear: both;
+        box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2),
+          0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+        background-color: #fff;
+        border-radius: 1rem;
+        + .mat-row {
+          margin-top: 24px;
+        }
+      }
+  
+      .mat-cell {
+        display: block;
+        width: 100%;
+        padding: 0 16px;
+        margin: 16px 0;
+        border: 0 none;
+        &:first-child {
+          padding: 0 48px 0 16px;
+          a {
+            font-size: 2rem;          
+            color: #3e75ff;
+          }
+          &:before {
+            display: none;
+          }
+        }
+        &.m-card-sub-title {
+          margin-top: -8px;
+          padding: 0 48px 0 16px;
+          color: rgba(0, 0, 0, 0.54);
+        }
+        &.m-card-title {
+            font-size: 2vw;
+        }
+        
+      }
+  
+      .has_label_on_mobile {
+        &:before {
+          content: attr(data-label);
+          display: inline;
+          font-weight: bold;
+        }
+      }
+  
+    }
+  
+    .mat-paginator {
+      margin-top: 24px;
+      font-family: Prompt;
+      border-radius: 1em;
+
+  
+    }
+  
+    
+  }
+  
+  @media (max-width: 450px) {
+    .header h2 {
+      color: black;
+      font-size: 21px;
+    }
+    .mat-elevation-z8 {
+      background: transparent;
+      box-shadow: none;
+    }
+  
+    .mat-form-field {
+      font-size: 14px;
+      width: 100%;
+      font-family: Prompt;
+    }
+  
+    .mat-header-row {
+      display: none;
+    }
+  
+    tbody {
+      display: block;
+      width: 100%;
+      font-family: Prompt;
+    }
+  
+    .mat-table {
+      background: transparent;
+      * {
+        box-sizing: border-box;
+      }
+  
+      .mat-row {
+        display: block;
+        overflow: hidden;
+        height: auto;
+        position: relative;
+        clear: both;
+        box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2),
+          0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+        background-color: #fff;
+        border-radius: 7px;
+        + .mat-row {
+          margin-top: 24px;
+        }
+      }
+  
+      .mat-cell {
+        display: block;
+        width: 100%;
+        padding: 0 16px;
+        margin: 16px 0;
+        border: 0 none;
+        &:first-child {
+          padding: 0 48px 0 16px;
+          a {
+            font-size: 20px;
+            // font-weight: 400;
+            
+            color: #3e75ff;
+          }
+          &:before {
+            display: none;
+          }
+        }
+        &.m-card-sub-title {
+          margin-top: -8px;
+          padding: 0 48px 0 16px;
+          color: rgba(0, 0, 0, 0.54);
+        }
+        &.m-card-title {
+            font-size: 2vw;
+        }
+        
+      }
+  
+      .has_label_on_mobile {
+        &:before {
+          content: attr(data-label);
+          display: inline;
+          font-weight: bold;
+        }
+      }
+  
+    }
+  
+    .mat-paginator {
+      margin-top: 24px;
+
+    }
+  }

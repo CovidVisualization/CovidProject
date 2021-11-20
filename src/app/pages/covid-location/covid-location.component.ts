@@ -2,7 +2,7 @@ import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import hospitalJSON from '../data/hospital-data.json';
+import hospitalJSON from '../../data/hospital-data.json';
 
 export interface HospitalData {
   name: string;
@@ -14,15 +14,13 @@ export interface HospitalData {
   location: string;
 }
 
-/**
- * @title Table with filtering
- */
+
 @Component({
-  selector: 'app-check-covid',
-  templateUrl: './check-covid.component.html',
-  styleUrls: ['./check-covid.component.scss'],
+  selector: 'app-covid-location',
+  templateUrl: './covid-location.component.html',
+  styleUrls: ['./covid-location.component.scss']
 })
-export class CheckCovidComponent implements AfterViewInit {
+export class CovidLocationComponent implements AfterViewInit {
 
   HOSPITAL_DATA: HospitalData[] = hospitalJSON;
 
@@ -48,4 +46,5 @@ export class CheckCovidComponent implements AfterViewInit {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
+
 }
