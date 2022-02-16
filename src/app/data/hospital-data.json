@@ -45,21 +45,13 @@
     "location": "https://goo.gl/maps/Wk7457C7EV2anbyv8"
   },
   {
-    "name": "รพ. Mansea",
+    "name": "MN Medical Care",
     "district": "กรุงเทพมหานคร",
-    "province": "ลาดพร้าว",
-    "type": "RT-PCR",
-    "typeEnter": "Drive-Thu",
-    "price": "1500 บาท",
-    "location": "goole map"
-  },
-  {
-    "name": "รพ. Mansea",
-    "district": "กรุงเทพมหานคร",
-    "province": "ลาดพร้าว",
-    "type": "RT-PCR",
-    "typeEnter": "Drive-Thu",
-    "price": "1500 บาท",
-    "location": "goole map"
+    "province": "สาธร",
+    "type": "Antigen Test Kit",
+    "typeEnter": "ตรวจที่คลินิก",
+    "price": "500 บาท",
+    "location": "https://goo.gl/maps/VrdBuJjv6mQBX9U78"
   }
+
 ]
